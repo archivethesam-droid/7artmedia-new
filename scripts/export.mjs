@@ -8,6 +8,77 @@ const DIST = path.join(ROOT, 'dist');
 const deployDirectories = ['assets', 'blog', 'admin'];
 const deployExtensions = new Set(['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg', '.ico', '.txt', '.xml', '.webmanifest']);
 
+const DEFAULT_SITE_URL = 'https://7artmedia-new.vercel.app';
+const CANONICAL_GITHUB_REPO = 'archivethesam-droid/7artmedia-new';
+const LEGACY_REPOSITORIES = new Map([
+  ['archivethexam-droid/7artmedia-new', CANONICAL_GITHUB_REPO],
+  ['archivethesam-droid/7artmediaofficial', CANONICAL_GITHUB_REPO],
+  ['archivethesam-droid/7artmediaofficial.git', CANONICAL_GITHUB_REPO]
+]);
+
+function resolveGithubRepo(rawValue) {
+  const suppliedValue = String(rawValue || '').trim().replace(/^https?:\/\/github\.com\//i, '').replace(/\/$/, '');
+  const candidate = suppliedValue || CANONICAL_GITHUB_REPO;
+  const alias = LEGACY_REPOSITORIES.get(candidate.toLowerCase());
+
+  if (alias) {
+    console.warn(`CMS warning: GITHUB_REPO \"${candidate}\" is obsolete or misspelled. Using \"${alias}\" instead.`);
+    return alias;
+  }
+
+  if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(candidate)) {
+    throw new Error(`Invalid GITHUB_REPO \"${candidate}\". Expected the format \"owner/repository\".`);
+  }
+
+  return candidate;
+}
+
+function resolveSiteUrl(rawValue) {
+  const candidate = String(rawValue || DEFAULT_SITE_URL).trim().replace(/\/$/, '');
+  let parsed;
+
+  try {
+    parsed = new URL(candidate);
+  } catch {
+    throw new Error(`Invalid SITE_URL \"${candidate}\". Use a complete URL such as ${DEFAULT_SITE_URL}.`);
+  }
+
+  if (!['http:', 'https:'].includes(parsed.protocol)) {
+    throw new Error(`Invalid SITE_URL protocol \"${parsed.protocol}\". Only http and https are supported.`);
+  }
+
+  return candidate;
+}
+
+async function validateCmsExport({ cmsConfigPath, githubRepo, siteUrl }) {
+  const config = await fs.readFile(cmsConfigPath, 'utf8');
+  const checks = [
+    [`repo: ${githubRepo}`, 'GitHub repository'],
+    [`base_url: ${siteUrl}`, 'OAuth base URL'],
+    ['auth_endpoint: api/begin', 'OAuth begin endpoint'],
+    [`site_url: ${siteUrl}`, 'CMS site URL']
+  ];
+
+  for (const [needle, label] of checks) {
+    if (!config.includes(needle)) {
+      throw new Error(`CMS export validation failed: ${label} was not written correctly.`);
+    }
+  }
+
+  const staleValues = ['archivethexam-droid/7artmedia-new', 'archivethesam-droid/7Artmediaofficial'];
+  for (const staleValue of staleValues) {
+    if (config.toLowerCase().includes(staleValue.toLowerCase())) {
+      throw new Error(`CMS export validation failed: stale repository value \"${staleValue}\" is still present.`);
+    }
+  }
+
+  await Promise.all([
+    fs.access(path.join(ROOT, 'api', 'begin.js')),
+    fs.access(path.join(ROOT, 'api', 'complete.js')),
+    fs.access(path.join(ROOT, 'server', 'oauth-config.js'))
+  ]);
+}
+
 await fs.rm(DIST, { recursive: true, force: true });
 await fs.mkdir(DIST, { recursive: true });
 
@@ -20,8 +91,8 @@ for (const directory of deployDirectories) {
   }
 }
 
-const siteUrl = (process.env.SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
-const githubRepo = process.env.GITHUB_REPO || 'YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME';
+const siteUrl = resolveSiteUrl(process.env.SITE_URL);
+const githubRepo = resolveGithubRepo(process.env.GITHUB_REPO);
 const cmsConfigPath = path.join(DIST, 'admin', 'config.yml');
 let cmsConfig = await fs.readFile(cmsConfigPath, 'utf8');
 cmsConfig = cmsConfig
@@ -33,7 +104,7 @@ cmsConfig = cmsConfig
 await fs.writeFile(cmsConfigPath, cmsConfig);
 
 if (!process.env.GITHUB_REPO) {
-  console.warn('CMS warning: GITHUB_REPO is not set. Live /admin login will require this Vercel environment variable.');
+  console.warn(`CMS warning: GITHUB_REPO is not set. Using the project repository ${CANONICAL_GITHUB_REPO}.`);
 }
 
 for (const entry of await fs.readdir(ROOT, { withFileTypes: true })) {
@@ -44,4 +115,8 @@ for (const entry of await fs.readdir(ROOT, { withFileTypes: true })) {
   }
 }
 
+await validateCmsExport({ cmsConfigPath, githubRepo, siteUrl });
+
+console.log(`CMS repository: ${githubRepo}`);
+console.log(`CMS site URL: ${siteUrl}`);
 console.log(`Production site exported to ${DIST}`);

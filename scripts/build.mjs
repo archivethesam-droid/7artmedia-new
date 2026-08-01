@@ -1,8 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import matter from 'gray-matter';
-import { marked } from 'marked';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, '..');
@@ -12,7 +10,8 @@ const SITE_URL = (process.env.SITE_URL || 'https://7artmedia.com').replace(/\/$/
 const SITE_NAME = '7Art';
 const DEFAULT_AUTHOR = '7Art Team';
 
-marked.setOptions({ gfm: true, breaks: false });
+let matter;
+let marked;
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -106,13 +105,14 @@ function nav(prefix = '/') {
   return `
   <nav class="global-nav" aria-label="Primary navigation" data-global-nav>
     <div class="global-nav__inner">
-      <a class="global-nav__brand" href="${prefix}index.html" aria-label="7Art home">
-        <span class="global-nav__mark" aria-hidden="true">7</span><span>7Art</span>
+      <a class="global-nav__brand" href="${prefix}index.html#top" aria-label="7Art home">
+        <img class="global-nav__logo" src="${prefix}assets/brand/7art-logo.png" alt="7Art" width="80" height="34">
       </a>
       <div class="global-nav__links" id="globalNavLinks" data-global-nav-links>
+        <a class="global-nav__link" href="${prefix}index.html#ecosystem">Ecosystem</a>
         <a class="global-nav__link" href="${prefix}leadership.html">Leadership</a>
         <a class="global-nav__link" href="${prefix}index.html#framework">Framework</a>
-        <a class="global-nav__link" href="${prefix}index.html#services">Services</a>
+        <a class="global-nav__link" href="${prefix}services.html">Services</a>
         <a class="global-nav__link" href="${prefix}results.html">Results</a>
         <a class="global-nav__link" href="${prefix}blog.html" aria-current="page">Blog</a>
         <a class="global-nav__link" href="${prefix}index.html#faq">FAQ</a>
@@ -132,7 +132,7 @@ function footer(prefix = '/') {
         <p>AI-assisted growth marketing for D2C brands.</p>
       </div>
       <div><h2>Explore</h2><a href="${prefix}results.html">Results</a><a href="${prefix}leadership.html">Leadership</a><a href="${prefix}blog.html">Blog</a></div>
-      <div><h2>Services</h2><a href="${prefix}index.html#services">Growth Strategy</a><a href="${prefix}index.html#services">Performance Marketing</a><a href="${prefix}index.html#services">Content & Creative</a></div>
+      <div><h2>Services</h2><a href="${prefix}services.html">Growth Strategy</a><a href="${prefix}services.html">Performance Marketing</a><a href="${prefix}services.html">Content & Creative</a></div>
       <div><h2>Start a conversation</h2><a href="mailto:7artsupportofficial@gmail.com">7artsupportofficial@gmail.com</a><a href="${prefix}index.html#contact">Get a free growth audit</a></div>
     </div>
     <div class="blog-footer-bottom">© ${new Date().getUTCFullYear()} 7Art Media. All rights reserved.</div>
@@ -333,6 +333,7 @@ function renderSitemap(posts) {
     ['/', '1.0', 'weekly'],
     ['/index.html', '1.0', 'weekly'],
     ['/leadership.html', '0.8', 'monthly'],
+    ['/services.html', '0.9', 'monthly'],
     ['/results.html', '0.9', 'monthly'],
     ['/blog.html', '0.9', 'weekly']
   ];
@@ -377,6 +378,10 @@ async function build() {
     console.warn('Keeping the existing prebuilt blog files and continuing with export.');
     return;
   }
+
+  ({ default: matter } = await import('gray-matter'));
+  ({ marked } = await import('marked'));
+  marked.setOptions({ gfm: true, breaks: false });
 
   const posts = await loadPosts();
   await fs.rm(BLOG_OUTPUT_DIR, { recursive: true, force: true });
