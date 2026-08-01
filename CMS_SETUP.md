@@ -50,7 +50,7 @@ Open **Vercel Project → Settings → Environment Variables** and add these val
 
 ```text
 SITE_URL=https://your-project.vercel.app
-GITHUB_REPO=archivethesam-droid/7artmedia-new
+GITHUB_REPO=github-username/repository-name
 OAUTH_CLIENT_ID=your-github-oauth-client-id
 OAUTH_CLIENT_SECRET=your-github-oauth-client-secret
 OAUTH_STATE_SECRET=generate-a-long-random-secret
@@ -59,17 +59,6 @@ OAUTH_STATE_SECRET=generate-a-long-random-secret
 Do not add a trailing slash to `SITE_URL`. `OAUTH_STATE_SECRET` should be a long random value and must not be shared.
 
 After adding or changing environment variables, redeploy the latest deployment.
-
-
-### Current 7Art repository value
-
-Use this exact value in Vercel:
-
-```text
-GITHUB_REPO=archivethesam-droid/7artmedia-new
-```
-
-The GitHub username contains **`sam`**, not `xam`. The old value `archivethexam-droid/7artmedia-new` causes Decap CMS to show **Repo not found** after login. The build script now corrects that known typo automatically, but the Vercel variable should still be updated and the project redeployed.
 
 ## 4. Create the GitHub OAuth App
 
@@ -101,7 +90,7 @@ Go to:
 https://your-project.vercel.app/admin/
 ```
 
-Click **Login with GitHub**. The logged-in GitHub account must have push access to `archivethesam-droid/7artmedia-new` (or to the repository configured in `GITHUB_REPO`).
+Click **Login with GitHub**. The logged-in GitHub account must have push access to the repository configured in `GITHUB_REPO`.
 
 ## Draft and publish workflow
 

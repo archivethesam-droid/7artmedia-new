@@ -99,7 +99,6 @@ const server = http.createServer(async (request, response) => {
 });
 
 await build();
-await fs.mkdir(WATCH_DIR, { recursive: true });
 
 const cmsCommand = process.platform === 'win32' ? 'npx.cmd' : 'npx';
 const cms = spawn(cmsCommand, ['decap-server'], { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
