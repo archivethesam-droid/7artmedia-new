@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME
+  repo: archivethexam-droid/7artmedia-new
   branch: main
-  base_url: http://localhost:3000
+  base_url: https://7artmedia-new.vercel.app
   auth_endpoint: api/begin
   squash_merges: true
   commit_messages:
@@ -12,10 +12,10 @@ backend:
     uploadMedia: "Upload blog image: {{path}}"
     deleteMedia: "Delete blog image: {{path}}"
 publish_mode: editorial_workflow
-site_url: http://localhost:3000
-display_url: http://localhost:3000
+site_url: https://7artmedia-new.vercel.app
+display_url: https://7artmedia-new.vercel.app
 logo:
-  src: http://localhost:3000/favicon.png
+  src: https://7artmedia-new.vercel.app/favicon.png
   show_in_header: true
 
 media_folder: assets/blog/uploads
