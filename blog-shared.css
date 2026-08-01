@@ -308,3 +308,75 @@ button { cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+/* ==================================================
+   7ART BRAND GRADIENT — MATCH WITH GROWTH AUDIT BUTTON
+================================================== */
+
+:root {
+  --blog-purple: #8b5cf6;
+  --blog-magenta: #b15dde;
+  --blog-orange: #ff7a18;
+
+  --blog-gradient: linear-gradient(
+    135deg,
+    #8b5cf6 0%,
+    #b15dde 50%,
+    #ff7a18 100%
+  );
+
+  --blog-gradient-soft: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.24),
+    rgba(255, 122, 24, 0.14)
+  );
+}
+
+/* Blog background glow */
+body {
+  background:
+    radial-gradient(
+      circle at 8% 0%,
+      rgba(139, 92, 246, 0.15),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 96% 14%,
+      rgba(255, 122, 24, 0.09),
+      transparent 25rem
+    ),
+    var(--blog-bg);
+}
+
+/* Blog cards hover */
+.blog-card:hover {
+  border-color: rgba(139, 92, 246, 0.72);
+}
+
+/* Search field focus */
+.search-box:focus-within {
+  border-color: rgba(139, 92, 246, 0.85);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+/* Checkbox color */
+.filter-option input {
+  accent-color: #8b5cf6;
+}
+
+/* Tags and category patches */
+.tag:hover,
+.tag.is-active {
+  color: #ffffff;
+  border-color: rgba(139, 92, 246, 0.7);
+  background: var(--blog-gradient-soft);
+}
+
+/* Subscribe box background */
+.subscribe-card {
+  background: linear-gradient(
+    145deg,
+    rgba(139, 92, 246, 0.28),
+    rgba(16, 16, 21, 0.94) 58%,
+    rgba(255, 122, 24, 0.16)
+  );
+}
