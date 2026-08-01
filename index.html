@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Organization",
+ "name":"7Art",
+ "alternateName":"7Art Media",
+ "url":"https://7artmedia.com",
+ "logo":"https://7artmedia.com/7Art.png",
+ "description":"AI-powered digital marketing agency helping D2C, ecommerce and startup brands grow.",
+ "sameAs":[]
+}
+</script><head><script>(function(){
+  var _WS=window.WebSocket, P=[["wss://realtime.chatgpt.com","/__realtime__"],["wss://ws.chatgpt.com","/__ws__"],["wss://ab.chatgpt.com","/__ab__"],["wss://cdn.oaistatic.com","/__cdn__"],["wss://feather.openai.com","/__feather__"]], WCW=new RegExp("^wss?://([a-z0-9.-]+\\.oaiusercontent\\.com)");
+  var sch=(location.protocol==='https:'?'wss':'ws')+'://'+location.host;
+  function rw(u){ try{ if(typeof u!=='string')return u;
+    for(var i=0;i<P.length;i++){ if(u.indexOf(P[i][0])===0) return sch+P[i][1]+u.slice(P[i][0].length); }
+    if(WCW){ var m=u.match(WCW); if(m) return sch+'/__h__/'+m[1]+u.slice(m[0].length); }
+  }catch(e){} return u; }
+  window.WebSocket=function(u,p){ u=rw(u); return p?new _WS(u,p):new _WS(u); };
+  window.WebSocket.prototype=_WS.prototype;
+  for(var k in _WS) try{ window.WebSocket[k]=_WS[k]; }catch(e){}
+})();</script><script>(function(){
+  var O=location.origin, P=[["https://realtime.chatgpt.com","/__realtime__"],["https://ws.chatgpt.com","/__ws__"],["https://ab.chatgpt.com","/__ab__"],["https://cdn.oaistatic.com","/__cdn__"],["https://feather.openai.com","/__feather__"],["https://chatgpt.com",""]], WC=new RegExp("https://([a-z0-9.-]+\\.oaiusercontent\\.com)",'g');
+  function h2p(u){ try{ for(var i=0;i<P.length;i++){ u=u.split(P[i][0]).join(O+P[i][1]); }
+    if(WC) u=u.replace(WC, function(_,h){ return O+'/__h__/'+h; }); }catch(e){} return u; }
+  var _f=window.fetch;
+  window.fetch=function(input,init){ try{
+    var u=(typeof input==='string')?input:(input&&input.url);
+    if(typeof u==='string'){
+      var nu=u;
+      if(nu.indexOf('wss://')===0)nu='https://'+nu.slice(6);
+      else if(nu.indexOf('ws://')===0)nu='http://'+nu.slice(5);
+      nu=h2p(nu);
+      if(nu!==u){ return (typeof input==='string')?_f(nu,init):_f(new Request(nu,input),init); }
+    }
+  }catch(e){} return _f(input,init); };
+})();</script><script>(function(){
+  var O=location.origin, P=[["https://realtime.chatgpt.com","/__realtime__"],["https://ws.chatgpt.com","/__ws__"],["https://ab.chatgpt.com","/__ab__"],["https://cdn.oaistatic.com","/__cdn__"],["https://feather.openai.com","/__feather__"],["https://chatgpt.com",""]], WC=new RegExp("https://([a-z0-9.-]+\\.oaiusercontent\\.com)",'g');
+  function h2p(u){ try{ for(var i=0;i<P.length;i++){ u=u.split(P[i][0]).join(O+P[i][1]); }
+    if(WC) u=u.replace(WC, function(_,h){ return O+'/__h__/'+h; }); }catch(e){} return u; }
+  var _open=XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open=function(m,u){ try{ if(typeof u==='string') u=h2p(u); }catch(e){}
+    return _open.apply(this, [m,u].concat([].slice.call(arguments,2))); };
+})();</script><script>(function(){
+  var O=location.origin, P=[["https://realtime.chatgpt.com","/__realtime__"],["https://ws.chatgpt.com","/__ws__"],["https://ab.chatgpt.com","/__ab__"],["https://cdn.oaistatic.com","/__cdn__"],["https://feather.openai.com","/__feather__"],["https://chatgpt.com",""]], WC=new RegExp("https://([a-z0-9.-]+\\.oaiusercontent\\.com)",'g');
+  function h2p(u){ try{ for(var i=0;i<P.length;i++){ u=u.split(P[i][0]).join(O+P[i][1]); }
+    if(WC) u=u.replace(WC, function(_,h){ return O+'/__h__/'+h; }); }catch(e){} return u; }
+  function patchSrc(proto){ try{
+    var d=Object.getOwnPropertyDescriptor(proto,'src'); if(!d||!d.set)return;
+    Object.defineProperty(proto,'src',{configurable:true,enumerable:d.enumerable,
+      get:function(){return d.get.call(this);},
+      set:function(v){ try{ if(typeof v==='string') v=h2p(v); }catch(e){} d.set.call(this,v); }});
+  }catch(e){} }
+  if(window.HTMLMediaElement) patchSrc(HTMLMediaElement.prototype);
+  if(window.HTMLSourceElement) patchSrc(HTMLSourceElement.prototype);
+  if(window.HTMLImageElement) patchSrc(HTMLImageElement.prototype); // ChatGPT DALL-E/uploaded images load via <img src=…oaiusercontent…>
+  var _sa=Element.prototype.setAttribute;
+  Element.prototype.setAttribute=function(n,v){ try{ var t=this.tagName;
+    if(n==='src'&&typeof v==='string'&&(t==='AUDIO'||t==='VIDEO'||t==='SOURCE'||t==='IMG')) v=h2p(v); }catch(e){}
+    return _sa.call(this,n,v); };
+})();</script><style>#modal-conversation-history-rate-limit{display:none!important}#modal-subscription-failure{display:none!important}#modal-settings{display:none!important}div.sticky.bottom-0.z-30:has([data-testid="accounts-profile-button"]){display:none!important}[data-testid="accounts-profile-button"]{display:none!important}a[href^="/codex"]{display:none!important}a[href*="#pricing"]{display:none!important}div[role="dialog"]:has([data-testid="save-profile-button"]){display:none!important}div[data-state="open"]:has([data-testid="save-profile-button"]){display:none!important}a[href*="/settings"],a[href*="/account"],a[href*="/billing"]{display:none!important}[data-testid*="upgrade"],[class*="UpgradeButton"],button[aria-label="Upgrade plan"],[class*="paywall"]{display:none!important}</style><script>(function(){
+  var ARIA=["account menu","user menu","workspace and account","profile"],LABELS=["delete my account","sign out","log out","logout","signout","sign out of all devices","add password"],TESTIDS=["accounts-profile-button"],CARDS=[],SECTIONS=["danger zone","billing","subscription","plan","membership","payment","invoices","devices and sessions","authentication"],EMAILS=[],HREFS=[];
+  function hide(el){ if(el) el.style.setProperty('display','none','important'); }
+  function sweep(doEmail){ try{
+    for(var d=0;d<TESTIDS.length;d++){ var t=document.querySelectorAll('[data-testid="'+TESTIDS[d]+'"]'); for(var x=0;x<t.length;x++)hide(t[x]); }
+    for(var a=0;a<ARIA.length;a++){ var m=document.querySelectorAll('[aria-label="'+ARIA[a]+'" i],[title="'+ARIA[a]+'" i]'); for(var y=0;y<m.length;y++)hide(m[y]); }
+    if(CARDS.length){ var ck=document.querySelectorAll('.chakra-card,[class*="card"],[class*="Card"]');
+      for(var c=0;c<ck.length;c++){ var ct=(ck[c].textContent||'').toLowerCase(); for(var kk=0;kk<CARDS.length;kk++){ if(ct.indexOf(CARDS[kk])!==-1){ hide(ck[c]); break; } } } }
+    if(LABELS.length){ var nodes=document.querySelectorAll('button p,button span,[role="button"] p,button,a');
+      for(var i=0;i<nodes.length;i++){ var lt=(nodes[i].textContent||'').trim().toLowerCase();
+        if(LABELS.indexOf(lt)!==-1) hide(nodes[i].closest('button,[role="button"],a')||nodes[i]); } }
+    if(HREFS.length){ var la=document.querySelectorAll('a[href]');
+      for(var q=0;q<la.length;q++){ var hf=(la[q].getAttribute('href')||'').toLowerCase();
+        for(var z=0;z<HREFS.length;z++){ if(hf.indexOf(HREFS[z])!==-1){ hide(la[q]); break; } } } }
+    if(SECTIONS.length){ var hs=document.querySelectorAll('h1,h2,h3,h4,h5');
+      for(var h=0;h<hs.length;h++){ var htx=(hs[h].textContent||'').trim().toLowerCase(); if(SECTIONS.indexOf(htx)===-1)continue;
+        var sec=hs[h].closest('.chakra-stack,section,div[class*="chakra"]')||hs[h].parentElement;
+        if(sec){ hide(sec); var nx=sec.nextElementSibling; if(nx&&(nx.tagName==='HR'))hide(nx); } } }
+    if(doEmail&&EMAILS.length&&document.body){ try{ var wlk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),nd;
+      while((nd=wlk.nextNode())){ var tx=(nd.nodeValue||'').trim().toLowerCase(); if(tx.length<6||tx.length>200)continue;
+        for(var e=0;e<EMAILS.length;e++){ if(tx.indexOf(EMAILS[e])!==-1){ if(nd.parentElement)hide(nd.parentElement); break; } } } }catch(e){} }
+  }catch(e){} }
+  var pending=false,runs=0,FULL=5;
+  function schedule(){ if(pending)return; pending=true; setTimeout(function(){ pending=false; runs++; sweep(runs===1||(runs%FULL===0)); },120); }
+  if(document.readyState!=='loading') sweep(true);
+  document.addEventListener('DOMContentLoaded',function(){ sweep(true); });
+  new MutationObserver(schedule).observe(document.documentElement,{childList:true,subtree:true});
+})();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7Art — D2C Growth & Performance Marketing Agency</title>
+ <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="7Art helps D2C, eCommerce and startup brands to grow with strategy, performance marketing, creative content, automation and AI-assisted execution." />
+  <meta name="keywords" content="7Art, 7Art Media, AI Marketing Agency, Digital Marketing Agency, Performance Marketing, SEO, Google Ads, Meta Ads, Ecommerce Marketing, D2C Marketing">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+<style>
+#modal-conversation-history-rate-limit{display:none!important}
+#modal-settings{display:none!important}
+div.sticky.bottom-0.z-30:has([data-testid="accounts-profile-button"]){display:none!important}
+[data-testid="accounts-profile-button"]{display:none!important}
+a[href="/codex/cloud"]{display:none!important}
+a[href^="/codex"]{display:none!important}
+a[href*="#pricing"]{display:none!important}
+a[href$="#pricing"]{display:none!important}
+div[role="dialog"]:has([data-testid="save-profile-button"]){display:none!important}
+div[role="dialog"]:has([data-testid="save-profile-button"]) ~ *{pointer-events:auto!important}
+div[data-state="open"]:has([data-testid="save-profile-button"]){display:none!important}
+
+
+</style>
+  <style>
+    /* 7Art full-width infinite brand marquee fix */
+    .brand-strip {
+      width: 100%;
+      overflow: hidden !important;
+      padding: 36px 0 58px;
+    }
+
+    .brand-strip .container {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .brand-strip .section-kicker {
+      width: min(var(--max), calc(100% - 40px));
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 18px;
+    }
+
+    .brand-marquee {
+      width: 100vw !important;
+      margin-left: calc(50% - 50vw) !important;
+      overflow: hidden !important;
+      position: relative;
+      opacity: 1 !important;
+      transform: none !important;
+      padding: 0;
+    }
+
+    .brand-track {
+      display: flex !important;
+      width: max-content !important;
+      animation: brandMarqueeMove 42s linear infinite !important;
+      will-change: transform;
+    }
+
+    .brand-group {
+      display: flex !important;
+      gap: 16px;
+      flex-shrink: 0;
+      padding-right: 16px;
+    }
+
+    .brand-group .brand-logo,
+    .brand-marquee .brand-logo {
+      flex: 0 0 250px !important;
+      min-width: 250px !important;
+      min-height: 86px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .brand-marquee:hover .brand-track {
+      animation-play-state: paused !important;
+    }
+
+    @keyframes brandMarqueeMove {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-33.333333%);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .brand-strip .section-kicker {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .brand-group .brand-logo,
+      .brand-marquee .brand-logo {
+        flex: 0 0 185px !important;
+        min-width: 185px !important;
+        min-height: 76px;
+      }
+
+      .brand-track {
+        animation-duration: 26s !important;
+      }
+    }
+  </style>
+
+<style>
+#modal-conversation-history-rate-limit{display:none!important}
+#modal-settings{display:none!important}
+div.sticky.bottom-0.z-30:has([data-testid="accounts-profile-button"]){display:none!important}
+[data-testid="accounts-profile-button"]{display:none!important}
+a[href="/codex/cloud"]{display:none!important}
+a[href^="/codex"]{display:none!important}
+a[href*="#pricing"]{display:none!important}
+a[href$="#pricing"]{display:none!important}
+div[role="dialog"]:has([data-testid="save-profile-button"]){display:none!important}
+div[role="dialog"]:has([data-testid="save-profile-button"]) ~ *{pointer-events:auto!important}
+div[data-state="open"]:has([data-testid="save-profile-button"]){display:none!important}
+
+
+</style>  <link rel="stylesheet" href="global-navbar.css" />
+  <link rel="stylesheet" href="lead-popup.css?v=2">
+</head>
+
+<body>
+  <nav class="global-nav" aria-label="Primary navigation" data-global-nav>
+    <div class="global-nav__inner">
+      <a class="global-nav__brand" href="index.html#top" aria-label="7Art home">
+        <span class="global-nav__mark" aria-hidden="true">7</span>
+        <span>7Art</span>
+      </a>
+
+      <div class="global-nav__links" id="globalNavLinks" data-global-nav-links>
+        <a class="global-nav__link" href="index.html#ecosystem">Ecosystem</a>
+        <a class="global-nav__link" href="leadership.html">Leadership</a>
+        <a class="global-nav__link" href="index.html#framework">Framework</a>
+        <a class="global-nav__link" href="index.html#services">Services</a>
+        <a class="global-nav__link" href="results.html">Results</a>
+        <a class="global-nav__link" href="blog.html">Blog</a>
+        <a class="global-nav__link" href="index.html#faq">FAQ</a>
+      </div>
+
+      <a class="global-nav__cta" href="index.html#contact">Get Free Growth Audit</a>
+      <button class="global-nav__toggle" type="button" aria-label="Open navigation" aria-controls="globalNavLinks" aria-expanded="false" data-global-nav-toggle>☰</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="pulse"></span> AI-assisted marketing for D2C, ECommerce & startup brands</div>
+          <h1>Turn your D2C brand into a <span class="gradient-text">growth machine</span></h1>
+          <p class="hero-copy">
+            7Art helps D2C brands, eCommerce businesses and startups grow faster with performance marketing, high-converting content, conversion-focused funnels, automation and smart use of AI tools. We build marketing systems that improve speed, clarity and revenue without making your brand look generic. </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Design my growth engine</a>
+            <a class="btn btn-secondary" href="#framework">See how 7Art works</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>10x</strong>
+              <span>Faster testing, optimization, and marketing execution.</span>
+            </div>
+            <div class="metric">
+              <strong>24/7</strong>
+              <span>Marketing systems that Study, Analyse, and Execute</span>
+            </div>
+            <div class="metric">
+              <strong>∞</strong>
+              <span>Scalable content, funnels, and Creative Ideas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="orbital-card reveal" aria-label="AI ecosystem visualization">
+          <div class="signal signal-1">
+            <small>Search Engine Optimization</small>
+            <strong>Drive More Organic Traffic & Visibility</strong>
+            <div class="signal-line"></div>
+          </div>
+          <div class="signal signal-2">
+            <small>Web Design & Development</small>
+            <strong>Shopify Store , D2C & Ecom Websites</strong>
+            <div class="signal-line"></div>
+          </div>
+          <div class="signal signal-3">
+            <small>Performance Marketing</small>
+            <strong>Google Ads & Meta Ads That Generate Leads</strong>
+            <div class="signal-line"></div>
+          </div>
+          <div class="signal signal-4">
+            <small>Content & Branding</small>
+            <strong>Engage, Convert & Scale Your Audience</strong>
+            <div class="signal-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-strip">
+      <div class="container">
+        <div class="section-kicker reveal">Industries We Help</div>
+
+        <div class="brand-marquee" aria-label="Industries 7Art helps">
+          <div class="brand-track">
+        <div class="brand-group">
+          <div class="brand-logo"><i class="ri-shopping-bag-3-line" aria-hidden="true"></i><span>D2C Brands</span></div>
+          <div class="brand-logo"><i class="ri-shopping-cart-2-line" aria-hidden="true"></i><span>eCommerce Stores</span></div>
+          <div class="brand-logo"><i class="ri-map-pin-2-line" aria-hidden="true"></i><span>Local Businesses</span></div>
+          <div class="brand-logo"><i class="ri-rocket-2-line" aria-hidden="true"></i><span>Startups</span></div>
+          <div class="brand-logo"><i class="ri-user-star-line" aria-hidden="true"></i><span>Personal Brands</span></div>
+          <div class="brand-logo"><i class="ri-briefcase-4-line" aria-hidden="true"></i><span>Service Companies</span></div>
+          <div class="brand-logo"><i class="ri-cloud-line" aria-hidden="true"></i><span>SaaS Teams</span></div>
+          <div class="brand-logo"><i class="ri-video-on-line" aria-hidden="true"></i><span>Creator-led Brands</span></div>
+          <div class="brand-logo"><i class="ri-graduation-cap-line" aria-hidden="true"></i><span>Education</span></div>
+          <div class="brand-logo"><i class="ri-building-4-line" aria-hidden="true"></i><span>Real Estate</span></div>
+          <div class="brand-logo"><i class="ri-heart-pulse-line" aria-hidden="true"></i><span>Health & Wellness</span></div>
+          <div class="brand-logo"><i class="ri-shirt-line" aria-hidden="true"></i><span>Fashion & Lifestyle</span></div>
+        </div>
+
+        <div class="brand-group" aria-hidden="true">
+          <div class="brand-logo"><i class="ri-shopping-bag-3-line" aria-hidden="true"></i><span>D2C Brands</span></div>
+          <div class="brand-logo"><i class="ri-shopping-cart-2-line" aria-hidden="true"></i><span>eCommerce Stores</span></div>
+          <div class="brand-logo"><i class="ri-map-pin-2-line" aria-hidden="true"></i><span>Local Businesses</span></div>
+          <div class="brand-logo"><i class="ri-rocket-2-line" aria-hidden="true"></i><span>Startups</span></div>
+          <div class="brand-logo"><i class="ri-user-star-line" aria-hidden="true"></i><span>Personal Brands</span></div>
+          <div class="brand-logo"><i class="ri-briefcase-4-line" aria-hidden="true"></i><span>Service Companies</span></div>
+          <div class="brand-logo"><i class="ri-cloud-line" aria-hidden="true"></i><span>SaaS Teams</span></div>
+          <div class="brand-logo"><i class="ri-video-on-line" aria-hidden="true"></i><span>Creator-led Brands</span></div>
+          <div class="brand-logo"><i class="ri-graduation-cap-line" aria-hidden="true"></i><span>Education</span></div>
+          <div class="brand-logo"><i class="ri-building-4-line" aria-hidden="true"></i><span>Real Estate</span></div>
+          <div class="brand-logo"><i class="ri-heart-pulse-line" aria-hidden="true"></i><span>Health & Wellness</span></div>
+          <div class="brand-logo"><i class="ri-shirt-line" aria-hidden="true"></i><span>Fashion & Lifestyle</span></div>
+        </div>
+
+        <div class="brand-group" aria-hidden="true">
+          <div class="brand-logo"><i class="ri-shopping-bag-3-line" aria-hidden="true"></i><span>D2C Brands</span></div>
+          <div class="brand-logo"><i class="ri-shopping-cart-2-line" aria-hidden="true"></i><span>eCommerce Stores</span></div>
+          <div class="brand-logo"><i class="ri-map-pin-2-line" aria-hidden="true"></i><span>Local Businesses</span></div>
+          <div class="brand-logo"><i class="ri-rocket-2-line" aria-hidden="true"></i><span>Startups</span></div>
+          <div class="brand-logo"><i class="ri-user-star-line" aria-hidden="true"></i><span>Personal Brands</span></div>
+          <div class="brand-logo"><i class="ri-briefcase-4-line" aria-hidden="true"></i><span>Service Companies</span></div>
+          <div class="brand-logo"><i class="ri-cloud-line" aria-hidden="true"></i><span>SaaS Teams</span></div>
+          <div class="brand-logo"><i class="ri-video-on-line" aria-hidden="true"></i><span>Creator-led Brands</span></div>
+          <div class="brand-logo"><i class="ri-graduation-cap-line" aria-hidden="true"></i><span>Education</span></div>
+          <div class="brand-logo"><i class="ri-building-4-line" aria-hidden="true"></i><span>Real Estate</span></div>
+          <div class="brand-logo"><i class="ri-heart-pulse-line" aria-hidden="true"></i><span>Health & Wellness</span></div>
+          <div class="brand-logo"><i class="ri-shirt-line" aria-hidden="true"></i><span>Fashion & Lifestyle</span></div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ecosystem">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Ecosystem</div>
+          <h2>Not random services. A connected marketing growth system.</h2>
+          <p class="section-copy">
+           
+7Art connects strategy, content, ads, funnels, automation and analytics into one clear growth process. We use AI tools where they improve speed, research, content planning, testing and reporting — but every decision is guided by brand strategy, market understanding and human creativity.
+          </p>
+        </div>
+
+        <div class="ecosystem-grid">
+          <article class="glass-card reveal">
+            <div class="card-inner">
+              <div class="icon icon-research"><i class="ri-search-eye-line"></i></div>
+              <h3>Market & Audience Research
+</h3>
+              <p>We study your audience, competitors, buying intent, content gaps and offer positioning to find better growth opportunities.
+
+</p>
+            </div>
+          </article>
+          <article class="glass-card reveal">
+            <div class="card-inner">
+              <div class="icon icon-content"><i class="ri-quill-pen-line"></i></div>
+              <h3>Creative & Content Engine
+</h3>
+              <p>We create ad concepts, social content, landing page copy, video scripts, email flows and campaign ideas built around your brand voice.
+</p>
+            </div>
+          </article>
+          <article class="glass-card reveal">
+            <div class="card-inner">
+              <div class="icon icon-automation"><i class="ri-radar-line"></i></div>
+              <h3>Automation & Performance Tracking
+</h3>
+              <p>We set up workflows, reporting systems, lead tracking and campaign insights so your marketing becomes easier to manage and improve.
+.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+<section class="section" id="why">
+      <div class="container why-layout">
+        <div class="sticky-panel reveal">
+          <div class="section-kicker">Why 7Art</div>
+          <h2>Built for speed, clarity and measurable brand growth.</h2>
+          <span class="large-number">100+</span>
+          <p class="section-copy">
+            Most brands struggle because their marketing is scattered — ads, content, landing pages, emails and reporting all work separately. 7Art brings everything together into one practical growth system designed to improve reach, leads, conversions and revenue.
+
+          </p>
+        </div>
+
+        <div class="why-list">
+          <div class="why-item reveal">
+            <span class="check">✓</span>
+            <div>
+              <h3>We build systems, not just posts</h3>
+              <p>Every campaign, content piece and funnel is connected to a clear business goal.</p>
+            </div>
+          </div>
+          <div class="why-item reveal">
+            <span class="check">✓</span>
+            <div>
+              <h3>We combine creativity with performance</h3>
+              <p>Your brand should look premium, communicate clearly and still drive measurable results.</p>
+            </div>
+          </div>
+          <div class="why-item reveal">
+            <span class="check">✓</span>
+            <div>
+              <h3>We use AI where it actually helps</h3>
+              <p>AI tools help us research faster, test more ideas, create better workflows and improve execution speed.</p>
+            </div>
+          </div>
+          <div class="why-item reveal">
+            <span class="check">✓</span>
+            <div>
+              <h3>We focus on business outcomes</h3>
+              <p>From awareness to leads, sales and retention, our work is built around growth that can be tracked.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    
+       
+<section class="section" id="framework">
+<div class="container">
+<div class="section-head reveal">
+<div class="section-kicker">Growth Framework™</div>
+<h2>The 7Art Growth Loop</h2>
+<p class="section-copy">Seven connected stages. One destination: sustainable growth.</p>
+</div>
+
+<div class="express-wrap">
+  <div class="express-loop">
+
+    <div class="engine">
+      <div class="smoke s1"></div><div class="smoke s2"></div><div class="smoke s3"></div>
+      <div class="headlight"></div><div class="light"></div>
+      <div class="engine-body"></div>
+      <div class="wheel w1"></div><div class="wheel w2"></div><div class="wheel w3"></div><div class="wheel w4"></div>
+      <div class="engine-copy"><h3>7Art Loop</h3></div>
+    </div>
+
+    <div class="coach"><span>01</span><h3>Discover</h3><h4>Understand the brand</h4><p>We uncover your goals, audience, positioning, and growth opportunities.</p><div class="cw"></div><div class="cw r"></div></div>
+    <div class="coach"><span>02</span><h3>Analyze</h3><h4>Research what matters</h4><p>Market insights, competitor analysis, and performance evaluation.</p><div class="cw"></div><div class="cw r"></div></div>
+    <div class="coach"><span>03</span><h3>Architect</h3><h4>Build the roadmap</h4><p>A custom growth blueprint aligned with your business objectives.</p><div class="cw"></div><div class="cw r"></div></div>
+    <div class="coach"><span>04</span><h3>Create</h3><h4>Craft the assets</h4><p>Websites, content, creatives, and systems built for performance.</p><div class="cw"></div><div class="cw r"></div></div>
+    <div class="coach"><span>05</span><h3>Activate</h3><h4>Launch with purpose</h4><p>Deploy campaigns, funnels, automations, and growth initiatives.</p><div class="cw"></div><div class="cw r"></div></div>
+    <div class="coach"><span>06</span><h3>Optimize</h3><h4>Refine continuously</h4><p>Test, improve, and strengthen every stage of the customer journey.</p><div class="cw"></div><div class="cw r"></div></div>
+    <div class="coach"><span>07</span><h3>Scale</h3><h4>Accelerate growth</h4><p>Expand successful systems and create sustainable momentum.</p><div class="cw"></div><div class="cw r"></div></div>
+
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+     <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Services</div>
+          <h2>Growth services built for modern brands</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon">01</div>
+            <div>
+              <h3>Growth Strategy</h3>
+              <p>Brand positioning, audience research, offer clarity, go-to-market planning and campaign direction.</p>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">02</div>
+            <div>
+              <h3>Content & Creative System</h3>
+              <p>Ad creatives, social media content, video scripts, landing page copy, email content and campaign ideas.</p>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">03</div>
+            <div>
+              <h3>Performance Marketing</h3>
+              <p>Meta ads, Google ads, campaign planning, creative testing, retargeting and paid growth optimization.</p>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">04</div>
+            <div>
+              <h3>Marketing Automation & Reporting</h3>
+              <p>lead tracking, email automation, dashboards, campaign reports and AI-assisted productivity systems.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+<section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Testimonials</div>
+          <h2>What brands usually say After working with us</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <blockquote class="quote reveal">
+            <p>“Our ads are running, but results are not stable.”
+We help identify weak messaging, poor creatives, landing page issues and tracking gaps.</p>
+            <div class="person">
+              <div class="avatar"></div>
+              <div>
+                <strong>Ashok kambam</strong>
+                <span>Head, Meridian</span>
+              </div>
+            </div>
+          </blockquote>
+          <blockquote class="quote reveal">
+            <p>“We are creating content, but it is not converting.”
+We build content systems connected to audience intent, offers and funnel goals.</p>
+            <div class="person">
+              <div class="avatar"></div>
+              <div>
+                <strong>Arjun Rao</strong>
+                <span>Growth Lead, mymercado</span>
+              </div>
+            </div>
+          </blockquote>
+          <blockquote class="quote reveal">
+            <p>“We want to use AI but do not know where to start.”
+We use AI tools practically for research, content planning, automation, reporting and faster execution.</p>
+            <div class="person">
+              <div class="avatar"></div>
+              <div>
+                <strong>Mohan Singh</strong>
+                <span>Founder, Bihart</span>
+              </div>
+            </div>
+          </blockquote>
+          <blockquote class="quote reveal">
+            <p>“Our marketing feels scattered.”
+We connect content, ads, funnels and analytics into one growth process.</p>
+            <div class="person">
+              <div class="avatar"></div>
+              <div>
+                <strong>Daniel Kim</strong>
+                <span>CEO, reirei</span>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+
+     <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">FAQ</div>
+          <h2>Questions before building your growth engine.</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item reveal active">
+            <button class="faq-question" type="button">
+              <span>Is 7Art an AI company?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 7Art is a marketing and growth agency that uses AI tools to improve speed, research, content production, automation and performance tracking. Our focus is brand growth, better marketing execution and measurable business outcomes.
+</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Who is 7Art for?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>7Art is built for D2C brands, eCommerce businesses, startups, service companies and founder-led brands that want stronger marketing systems, better content, improved funnels and clearer growth execution.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>How does 7Art use AI in marketing?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We use AI tools for market research, content planning, ad angle testing, workflow automation, reporting, campaign insights and faster creative execution. AI supports the process, but strategy and brand direction stay human-led.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>Can 7Art manage performance marketing?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We can help with campaign strategy, ad creatives, landing pages, retargeting, testing plans and performance reporting across growth channels.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>Build a smarter marketing system for your brand.</h2>
+            <p class="section-copy">
+              Tell us about your brand, your current marketing challenge and the growth goal you want to achieve. We will help you identify the right strategy, content system, funnel and automation plan for your next stage.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-secondary" href="mailto:7artsupportofficial@gmail.com#87b0e6f5f3f4f2f7f7e8f5f3e8e1e1eee4eee6ebc7e0eae6eeeba9e4e8ea">7artsupportofficial@gmail.com</a>
+              <a class="btn btn-secondary" href="tel:+918796742031">+91 8796742031</a>
+            </div>
+          </div>
+
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="ddfa391e-7786-4d94-a9ec-f165e14144f0">
+            <input type="hidden" name="redirect" value="https://7art-three.vercel.app/thank-you.html">
+            <input type="hidden" name="subject" value="New 7Art Website Enquiry">
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+            <input class="field" type="text" name="name" placeholder="Name" aria-label="Name" required>
+            <input class="field" type="email" name="email" placeholder="Work email" aria-label="Work email" required>
+            <input class="field" type="tel" name="phone" placeholder="Phone / WhatsApp number" aria-label="Phone or WhatsApp number" required>
+            <input class="field" type="text" name="company" placeholder="Company" aria-label="Company">
+            <textarea class="field" name="message" placeholder="What are you building?" aria-label="Project details" required></textarea>
+            <button class="btn btn-primary" type="submit">Start the conversation</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-contact" aria-label="Quick contact buttons">
+    <a class="floating-btn floating-whatsapp" href="https://wa.me/8796742031?text=Hi%207Art%20team%2C%20I%20want%20to%20discuss%20Ai%20growth%20Marketing%20services." target="_blank" rel="noopener" aria-label="Message 7Art on WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16.04 3C8.87 3 3.04 8.78 3.04 15.9c0 2.27.6 4.48 1.75 6.42L3 29l6.85-1.78a13.05 13.05 0 0 0 6.18 1.56h.01c7.17 0 13-5.79 13-12.9C29.04 8.78 23.21 3 16.04 3Zm0 23.6h-.01c-1.85 0-3.67-.5-5.25-1.44l-.38-.23-4.06 1.05 1.08-3.94-.25-.4a10.65 10.65 0 0 1-1.63-5.75c0-5.91 4.84-10.72 10.8-10.72 2.88 0 5.6 1.12 7.64 3.15a10.62 10.62 0 0 1 3.16 7.56c0 5.91-4.85 10.72-10.8 10.72Zm5.92-8.03c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.52-.16-.74.16-.22.32-.85 1.04-1.04 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.14-.14.32-.38.49-.57.16-.19.22-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.74-1.78-1.01-2.43-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.68s1.16 3.12 1.32 3.33c.16.21 2.28 3.46 5.52 4.85.77.33 1.38.53 1.85.68.78.25 1.49.21 2.05.13.63-.09 1.9-.77 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.13-.3-.21-.62-.37Z"/>
+      </svg>
+    </a>
+
+    <a class="floating-btn floating-email" href="https://mail.google.com/mail/?view=cm&fs=1&to=7artsupportofficial@gmail.com&su=7Art%20AI%20Growth%20Services&body=Hi%207Art%20team%2C%20I%20want%20to%20discuss%20Ai%20growth%20Marketing%20services." target="_blank" rel="noopener" aria-label="Email 7Art">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M5.33 7.33h21.34c1.28 0 2.33 1.05 2.33 2.34v12.66a2.34 2.34 0 0 1-2.33 2.34H5.33A2.34 2.34 0 0 1 3 22.33V9.67a2.34 2.34 0 0 1 2.33-2.34Zm.27 3.15v11.55h20.8V10.48l-10.4 7.1-10.4-7.1Zm1.8-.82 8.6 5.87 8.6-5.87H7.4Z"/>
+      </svg>
+    </a>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="7Art home">
+  <img src="7Art.png" alt="7Art Logo" style="height:80px; width:auto;">
+</a>
+        <p style="margin-top: 16px;">Address: Noida Sector 44, Delhi NCR,
+ Uttar Pradesh (201303)</p>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <a href="#why">Why 7Art</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <a href="#ecosystem">Shopify Store Development</a>
+        <a href="#framework">Performance Marketing</a>
+        <a href="#services">SMM</a>
+        <a href="#faq">Brand Designing</a>
+      </div>
+
+      <div>
+        <h4>Social</h4>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">YouTube</a>
+        <a href="#">Newsletter</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 7Art. All rights reserved.</span>
+  
+    </div>
+    <div class="container footer-address">
+    </div>
+  </footer>
+  <script src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"06b23b6d13c24d9bb5ff57af0bbe2799","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+  <script src="global-navbar.js"></script>
+  <script src="lead-popup.js?v=2"></script>
+</body>
+</html>

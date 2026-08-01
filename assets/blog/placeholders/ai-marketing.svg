@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">AI + MARKETING</title><desc id="desc">Faster research, testing and execution</desc>
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5f369f"/><stop offset=".52" stop-color="#8f456f"/><stop offset="1" stop-color="#b44a24"/></linearGradient>
+  <radialGradient id="r"><stop offset="0" stop-color="#a363d5" stop-opacity=".34"/><stop offset="1" stop-color="#07070a" stop-opacity="0"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="675" fill="#0b0b10"/>
+<circle cx="210" cy="85" r="330" fill="url(#r)"/>
+<circle cx="1080" cy="590" r="330" fill="url(#r)" opacity=".55"/>
+<g opacity=".16" stroke="#fff"><path d="M0 112H1200M0 225H1200M0 338H1200M0 451H1200M0 564H1200"/><path d="M200 0V675M400 0V675M600 0V675M800 0V675M1000 0V675"/></g>
+<path d="M120 390 C260 210 420 490 590 250 S870 130 1080 240" fill="none" stroke="url(#g)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+<g fill="url(#g)"><circle cx="120" cy="420" r="13"/><circle cx="1080" cy="210" r="13"/></g>
+<rect x="72" y="70" width="54" height="54" rx="17" fill="url(#g)"/>
+<text x="99" y="108" fill="#fff" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="800">7</text>
+<text x="72" y="560" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1">AI + MARKETING</text>
+<text x="74" y="606" fill="#aaa6b3" font-family="Arial, sans-serif" font-size="22">Faster research, testing and execution</text>
+</svg>

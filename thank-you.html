@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — 7Art</title>
+  <meta name="description" content="Thank you for contacting 7Art. Your AI growth marketing request has been received." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .thank-you-page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 120px 20px 60px;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(139, 92, 246, 0.28), transparent 28rem),
+        radial-gradient(circle at 82% 25%, rgba(255, 122, 24, 0.20), transparent 25rem),
+        linear-gradient(180deg, #030308 0%, #070711 50%, #030308 100%);
+    }
+
+    .thank-card {
+      width: min(920px, 100%);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 38px;
+      padding: clamp(28px, 6vw, 64px);
+      background:
+        radial-gradient(circle at 12% 14%, rgba(139,92,246,0.26), transparent 20rem),
+        radial-gradient(circle at 88% 82%, rgba(255,122,24,0.18), transparent 20rem),
+        linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.035));
+      backdrop-filter: blur(24px);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+      text-align: center;
+    }
+
+    .thank-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.07);
+      color: #ffb86b;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .thank-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #25d366;
+      box-shadow: 0 0 0 8px rgba(37,211,102,0.12);
+    }
+
+    .thank-card h1 {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      font-weight: 950;
+      background: linear-gradient(110deg, #ffffff 8%, #d8c9ff 30%, #a855f7 60%, #ff8a2a 94%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .thank-card p {
+      max-width: 680px;
+      margin: 24px auto 0;
+      color: #a6a3b8;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .thank-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .thank-btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 850;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+    }
+
+    .thank-btn-primary {
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, #8b5cf6, #ff7a18);
+      box-shadow: 0 20px 55px rgba(139, 92, 246, 0.36);
+    }
+
+    .thank-btn-secondary {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(16px);
+    }
+
+    .thank-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .thank-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .thank-meta-item {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.045);
+    }
+
+    .thank-meta-item strong {
+      display: block;
+      margin-bottom: 7px;
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    .thank-meta-item span {
+      color: #a6a3b8;
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 680px) {
+      .thank-you-page {
+        padding-top: 90px;
+      }
+
+      .thank-actions {
+        flex-direction: column;
+      }
+
+      .thank-btn {
+        width: 100%;
+      }
+
+      .thank-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .thank-card {
+        border-radius: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="thank-you-page">
+    <section class="thank-card">
+      <div class="thank-badge">
+        <span class="thank-dot"></span>
+        Message received
+      </div>
+
+      <h1>Thank you for reaching out.</h1>
+
+      <p>
+        Your AI growth marketing request has been submitted successfully. The 7Art team will review your details and contact you soon.
+      </p>
+
+      <div class="thank-actions">
+        <a class="thank-btn thank-btn-primary" href="index.html">Back to home</a>
+        <a class="thank-btn thank-btn-secondary" href="https://wa.me/+918796742031?text=Hi%207Art%20team%2C%20I%20want%20to%20discuss%20Ai%20growth%20Marketing%20services." target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+
+      <div class="thank-meta">
+        <div class="thank-meta-item">
+          <strong>Email</strong>
+          <span>7artsupportofficial@gmail.com</span>
+        </div>
+        <div class="thank-meta-item">
+          <strong>Phone / WhatsApp</strong>
+          <span>+91 8796742031</span>
+        </div>
+        <div class="thank-meta-item">
+          <strong>Location</strong>
+          <span>Noida Sector 44, Delhi NCR</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
