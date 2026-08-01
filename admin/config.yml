@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: archivethesam-droid/7Artmediaofficial
+  repo: archivethesam-droid/7artmedia-new
   branch: main
   base_url: https://7artmedia-new.vercel.app
   auth_endpoint: api/begin
