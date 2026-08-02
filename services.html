@@ -1,15 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0225)https://cpt01.gfxtoolz.ai/backend-api/estuary/content?id=file_00000000f1c8820a842e203f0fc6b2dd&fn=services-fixed.html&cd=attachment&ts=496016&p=fs&cid=1&sig=265fc3362d0ddfedbc8e71fe3c472d24cc647f4c3f2762a0c10ac0e4a501f1c6&v=0 -->
+<html lang="en" data-my-extension-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script data-proxy="url-interceptor">
+(function(){
+'use strict';
+var targetHost='gex.0xu.xyz';
+var proxyBase=window.location.origin;
+function rewriteUrl(url){
+  if(!url)return url;
+  var urlStr=String(url);
+  if(urlStr.indexOf('https://'+targetHost)===0){
+    return urlStr.replace('https://'+targetHost,proxyBase);
+  }else if(urlStr.indexOf('http://'+targetHost)===0){
+    return urlStr.replace('http://'+targetHost,proxyBase);
+  }else if(urlStr.indexOf('//'+targetHost)===0){
+    return urlStr.replace('//'+targetHost,proxyBase);
+  }
+  return urlStr;
+}
+var origFetch=window.fetch;
+if(origFetch){
+  window.fetch=function(input,init){
+    if(typeof input==='string'){
+      input=rewriteUrl(input);
+    }else if(input&&input.url){
+      input=new Request(rewriteUrl(input.url),input);
+    }
+    return origFetch.call(this,input,init);
+  };
+}
+var origOpen=XMLHttpRequest.prototype.open;
+if(origOpen){
+  XMLHttpRequest.prototype.open=function(method,url){
+    var newUrl=rewriteUrl(url);
+    return origOpen.call(this,method,newUrl,arguments[2],arguments[3],arguments[4]);
+  };
+}
+})();
+</script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore 7Art services across paid media, Shopify, website development, SEO, GEO, content, creative, social media, UI UX, email marketing, brand identity and CRO.">
   <meta name="theme-color" content="#030308">
   <title>Services | 7Art Growth Marketing Agency</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Services _ 7Art Growth Marketing Agency_files/css2" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -1082,9 +1118,10 @@
     }
 
     .capabilities-head {
-      grid-template-columns: minmax(300px, 0.58fr) minmax(0, 1.42fr);
+      /* Give the heading enough room so gradient words do not overflow/cut off. */
+      grid-template-columns: minmax(390px, 0.72fr) minmax(0, 1.28fr);
       align-items: center;
-      gap: clamp(28px, 4vw, 64px);
+      gap: clamp(24px, 3vw, 48px);
       margin-bottom: 24px;
     }
 
@@ -1206,12 +1243,12 @@
 
     @media (max-width: 900px) {
       .capabilities-head {
-        grid-template-columns: minmax(245px, 0.7fr) minmax(0, 1.3fr);
-        gap: 26px;
+        grid-template-columns: minmax(330px, 0.78fr) minmax(0, 1.22fr);
+        gap: 24px;
       }
 
       .capabilities-title h2 {
-        font-size: clamp(2.75rem, 6.5vw, 4rem);
+        font-size: clamp(2.75rem, 6.1vw, 3.8rem);
       }
 
       .partner-card {
@@ -1545,56 +1582,56 @@
     }
 
   </style>
-</head>
+<script src="chrome-extension://mleedijcejojojkocejemihhfcfdahab/crypto-js.min.js"></script><script src="chrome-extension://mleedijcejojojkocejemihhfcfdahab/gfxtoolz.js"></script><style id="gfxtoolz-remote-blocking"></style><style id="gfxtoolz-remote-blocking"></style></head>
 <body>
   <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-    <symbol id="icon-ads" viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/><path d="m15 6 3-3 3 3M18 3v7"/></symbol>
-    <symbol id="icon-shop" viewBox="0 0 24 24"><path d="M3 9h18l-1.2-5H4.2L3 9Z"/><path d="M5 9v11h14V9M9 20v-6h6v6"/><path d="M3 9c0 2 3 2.5 4.5.5C9 12 12 12 13.5 9.5 15 12 18 12 19.5 9.5"/></symbol>
-    <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 9-4 3 4 3m8-6 4 3-4 3m-3-9-2 12"/></symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4m-9-5 2 2 4-5"/></symbol>
-    <symbol id="icon-ai" viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="4"/></symbol>
-    <symbol id="icon-write" viewBox="0 0 24 24"><path d="M4 20h4L20 8l-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4M4 4h7M4 8h5"/></symbol>
-    <symbol id="icon-video" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="m16 10 5-3v10l-5-3v-4ZM7 9h5M7 13h3"/></symbol>
-    <symbol id="icon-social" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.7 6.6-4.4m-6.6 7 6.6 4.4"/></symbol>
-    <symbol id="icon-ui" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 9v11M6 6h.01M9 6h.01"/></symbol>
-    <symbol id="icon-email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/><path d="m15 15 2 2 4-4"/></symbol>
-    <symbol id="icon-brand" viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 4.5 3.2 7 8 8 4.8-1 8-3.5 8-8V7l-8-4Z"/><path d="m9 14 3-6 3 6m-5-2h4"/></symbol>
-    <symbol id="icon-cro" viewBox="0 0 24 24"><path d="M4 19V5m0 14h16"/><path d="m7 15 4-4 3 2 5-6"/><circle cx="19" cy="7" r="1.5"/></symbol>
+    <symbol id="icon-ads" viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"></path><path d="m15 6 3-3 3 3M18 3v7"></path></symbol>
+    <symbol id="icon-shop" viewBox="0 0 24 24"><path d="M3 9h18l-1.2-5H4.2L3 9Z"></path><path d="M5 9v11h14V9M9 20v-6h6v6"></path><path d="M3 9c0 2 3 2.5 4.5.5C9 12 12 12 13.5 9.5 15 12 18 12 19.5 9.5"></path></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 9-4 3 4 3m8-6 4 3-4 3m-3-9-2 12"></path></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4m-9-5 2 2 4-5"></path></symbol>
+    <symbol id="icon-ai" viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"></path><circle cx="12" cy="12" r="4"></circle></symbol>
+    <symbol id="icon-write" viewBox="0 0 24 24"><path d="M4 20h4L20 8l-4-4L4 16v4Z"></path><path d="m13.5 6.5 4 4M4 4h7M4 8h5"></path></symbol>
+    <symbol id="icon-video" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="2"></rect><path d="m16 10 5-3v10l-5-3v-4ZM7 9h5M7 13h3"></path></symbol>
+    <symbol id="icon-social" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.7 10.7 6.6-4.4m-6.6 7 6.6 4.4"></path></symbol>
+    <symbol id="icon-ui" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 9v11M6 6h.01M9 6h.01"></path></symbol>
+    <symbol id="icon-email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path><path d="m15 15 2 2 4-4"></path></symbol>
+    <symbol id="icon-brand" viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 4.5 3.2 7 8 8 4.8-1 8-3.5 8-8V7l-8-4Z"></path><path d="m9 14 3-6 3 6m-5-2h4"></path></symbol>
+    <symbol id="icon-cro" viewBox="0 0 24 24"><path d="M4 19V5m0 14h16"></path><path d="m7 15 4-4 3 2 5-6"></path><circle cx="19" cy="7" r="1.5"></circle></symbol>
   </svg>
 
   <nav class="global-nav" aria-label="Primary navigation">
     <div class="global-nav__inner">
-      <a class="global-nav__brand" href="index.html#top" aria-label="7Art home">
-        <img class="global-nav__logo" src="7Art.png" alt="7Art">
+      <a class="global-nav__brand" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#top" aria-label="7Art home">
+        <img class="global-nav__logo" src="./Services _ 7Art Growth Marketing Agency_files/7Art.png" alt="7Art">
       </a>
 
       <div class="global-nav__links" id="globalNavLinks">
-        <a class="global-nav__link" href="index.html#ecosystem">Ecosystem</a>
-        <a class="global-nav__link" href="leadership.html">Leadership</a>
-        <a class="global-nav__link" href="index.html#framework">Framework</a>
-        <a class="global-nav__link" href="services.html" aria-current="page">Services</a>
-        <a class="global-nav__link" href="results.html">Results</a>
-        <a class="global-nav__link" href="blog.html">Blog</a>
-        <a class="global-nav__link" href="index.html#faq">FAQ</a>
+        <a class="global-nav__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#ecosystem">Ecosystem</a>
+        <a class="global-nav__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/leadership.html">Leadership</a>
+        <a class="global-nav__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#framework">Framework</a>
+        <a class="global-nav__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/services.html" aria-current="page">Services</a>
+        <a class="global-nav__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/results.html">Results</a>
+        <a class="global-nav__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/blog.html">Blog</a>
+        <a class="global-nav__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#faq">FAQ</a>
       </div>
 
-      <a class="global-nav__cta" href="index.html#contact">Get Free Growth Audit</a>
-      <button class="global-nav__toggle" type="button" aria-label="Open navigation" aria-controls="globalNavLinks" aria-expanded="false">&#9776;</button>
+      <a class="global-nav__cta" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Get Free Growth Audit</a>
+      <button class="global-nav__toggle" type="button" aria-label="Open navigation" aria-controls="globalNavLinks" aria-expanded="false">☰</button>
     </div>
   </nav>
 
   <main id="top">
     <section class="hero">
       <div class="container hero__content">
-        <div class="eyebrow reveal"><span class="eyebrow__dot"></span> Connected growth services</div>
-        <h1 class="reveal"><span class="hero-title-line">Everything your brand needs</span><span class="hero-title-line">to <span class="gradient-text">grow as one system.</span></span></h1>
-        <p class="hero__copy reveal">From strategy and acquisition to websites, content, retention and conversion, 7Art brings the essential growth capabilities together under one focused team.</p>
-        <div class="hero__actions reveal">
-          <a class="button-primary" href="index.html#contact">Build my growth plan</a>
-          <a class="button-secondary" href="#all-services">Explore all services</a>
+        <div class="eyebrow reveal is-visible" style="transition-delay: 0ms;"><span class="eyebrow__dot"></span> Connected growth services</div>
+        <h1 class="reveal is-visible" style="transition-delay: 55ms;"><span class="hero-title-line">Everything your brand needs</span><span class="hero-title-line">to <span class="gradient-text">grow as one system.</span></span></h1>
+        <p class="hero__copy reveal is-visible" style="transition-delay: 110ms;">From strategy and acquisition to websites, content, retention and conversion, 7Art brings the essential growth capabilities together under one focused team.</p>
+        <div class="hero__actions reveal is-visible" style="transition-delay: 165ms;">
+          <a class="button-primary" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Build my growth plan</a>
+          <a class="button-secondary" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/content?id=file_00000000f1c8820a842e203f0fc6b2dd&amp;fn=services-fixed.html&amp;cd=attachment&amp;ts=496016&amp;p=fs&amp;cid=1&amp;sig=265fc3362d0ddfedbc8e71fe3c472d24cc647f4c3f2762a0c10ac0e4a501f1c6&amp;v=0#all-services">Explore all services</a>
         </div>
 
-        <div class="hero__proof reveal" aria-label="Service advantages">
+        <div class="hero__proof reveal is-visible" aria-label="Service advantages" style="transition-delay: 0ms;">
           <div class="proof-card"><strong>One connected team</strong><span>Strategy, creative, media and technology aligned around the same goal.</span></div>
           <div class="proof-card"><strong>Built around outcomes</strong><span>Clear priorities, measurable execution and decisions backed by real data.</span></div>
           <div class="proof-card"><strong>Flexible engagement</strong><span>Choose one specialist service or build a complete growth system.</span></div>
@@ -1604,7 +1641,7 @@
 
     <section class="services-section" id="all-services">
       <div class="container">
-        <div class="section-head capabilities-head reveal">
+        <div class="section-head capabilities-head reveal" style="transition-delay: 55ms;">
           <div class="capabilities-title">
             <div class="section-kicker">Our capabilities</div>
             <h2><span class="capabilities-title__line">Specialist services.</span><span class="capabilities-title__line gradient-text">Connected execution.</span></h2>
@@ -1612,20 +1649,20 @@
 
           <div class="capabilities-side">
             <div class="partner-marquee" aria-label="Technology and advertising platform partnerships">
-              <div class="partner-marquee__track">
+              <div class="partner-marquee__track" style="animation-duration: 22.16s;">
                 <div class="partner-marquee__group">
-                  <figure class="partner-card"><img src="assets/partners/instagram-partner.png" alt="Instagram Partner" loading="eager" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/shopify-partner.png" alt="Shopify Partner" loading="eager" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/meta-business-partner.png" alt="Meta Business Partner" loading="eager" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/google-ads-partner.png" alt="Google Ads Certified Partner" loading="eager" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/google-business-partner.png" alt="Google My Business Partner" loading="eager" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/instagram-partner.png" alt="Instagram Partner" loading="eager" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/shopify-partner.png" alt="Shopify Partner" loading="eager" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/meta-business-partner.png" alt="Meta Business Partner" loading="eager" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/google-ads-partner.png" alt="Google Ads Certified Partner" loading="eager" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/google-business-partner.png" alt="Google My Business Partner" loading="eager" decoding="async"></figure>
                 </div>
                 <div class="partner-marquee__group" aria-hidden="true">
-                  <figure class="partner-card"><img src="assets/partners/instagram-partner.png" alt="" loading="lazy" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/shopify-partner.png" alt="" loading="lazy" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/meta-business-partner.png" alt="" loading="lazy" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/google-ads-partner.png" alt="" loading="lazy" decoding="async"></figure>
-                  <figure class="partner-card"><img src="assets/partners/google-business-partner.png" alt="" loading="lazy" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/instagram-partner.png" alt="" loading="lazy" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/shopify-partner.png" alt="" loading="lazy" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/meta-business-partner.png" alt="" loading="lazy" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/google-ads-partner.png" alt="" loading="lazy" decoding="async"></figure>
+                  <figure class="partner-card"><img src="./Services _ 7Art Growth Marketing Agency_files/google-business-partner.png" alt="" loading="lazy" decoding="async"></figure>
                 </div>
               </div>
             </div>
@@ -1633,7 +1670,7 @@
           </div>
         </div>
 
-        <div class="filter-bar reveal" role="group" aria-label="Filter services">
+        <div class="filter-bar reveal" role="group" aria-label="Filter services" style="transition-delay: 110ms;">
           <button class="filter-button is-active" type="button" data-filter="all">All services</button>
           <button class="filter-button" type="button" data-filter="growth">Growth</button>
           <button class="filter-button" type="button" data-filter="build">Build</button>
@@ -1642,7 +1679,7 @@
         </div>
 
         <div class="services-grid">
-          <article class="service-card reveal" data-category="growth">
+          <article class="service-card reveal" data-category="growth" style="transition-delay: 165ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-ads"></use></svg></span><span class="service-card__number">01</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Acquisition</span>
@@ -1650,10 +1687,10 @@
               <p class="service-card__description">Performance-led campaigns built to acquire customers efficiently, improve return on ad spend and scale with control.</p>
               <ul class="service-card__list"><li>Meta and Google Ads</li><li>Campaign strategy and media planning</li><li>Creative testing and optimization</li><li>Tracking, reporting and budget scaling</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="build growth">
+          <article class="service-card reveal" data-category="build growth" style="transition-delay: 0ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-shop"></use></svg></span><span class="service-card__number">02</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Commerce</span>
@@ -1661,10 +1698,10 @@
               <p class="service-card__description">Fast, scalable Shopify stores designed around clear product discovery, smooth buying journeys and stronger conversion.</p>
               <ul class="service-card__list"><li>Custom Shopify storefronts</li><li>Theme setup and customization</li><li>App integration and automation</li><li>Speed, analytics and conversion setup</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="build">
+          <article class="service-card reveal" data-category="build" style="transition-delay: 55ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-code"></use></svg></span><span class="service-card__number">03</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Digital Experience</span>
@@ -1672,10 +1709,10 @@
               <p class="service-card__description">Responsive, performance-focused websites that communicate your value clearly and turn attention into meaningful action.</p>
               <ul class="service-card__list"><li>Corporate and service websites</li><li>Landing pages and campaign sites</li><li>CMS and custom development</li><li>Mobile, speed and analytics setup</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="growth">
+          <article class="service-card reveal" data-category="growth" style="transition-delay: 110ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-search"></use></svg></span><span class="service-card__number">04</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Organic Search</span>
@@ -1683,10 +1720,10 @@
               <p class="service-card__description">A practical SEO system that strengthens technical foundations, search visibility and long-term organic demand.</p>
               <ul class="service-card__list"><li>Technical and on-page SEO</li><li>Keyword and competitor research</li><li>Content clusters and internal linking</li><li>Local SEO and performance reporting</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="growth">
+          <article class="service-card reveal" data-category="growth" style="transition-delay: 165ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-ai"></use></svg></span><span class="service-card__number">05</span></div>
             <div class="service-card__body">
               <span class="service-card__label">AI Discovery</span>
@@ -1694,10 +1731,10 @@
               <p class="service-card__description">Generative Engine Optimization helps your brand become easier for AI-powered search and answer engines to understand and surface.</p>
               <ul class="service-card__list"><li>AI search visibility assessment</li><li>Entity and topic authority mapping</li><li>Answer-ready content structure</li><li>Schema, source and trust signals</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="creative growth">
+          <article class="service-card reveal" data-category="creative growth" style="transition-delay: 0ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-write"></use></svg></span><span class="service-card__number">06</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Messaging</span>
@@ -1705,10 +1742,10 @@
               <p class="service-card__description">Clear, persuasive content that strengthens positioning, supports discovery and moves customers toward a decision.</p>
               <ul class="service-card__list"><li>Website and landing page copy</li><li>SEO blogs and thought leadership</li><li>Ad, product and campaign copy</li><li>Email and social content</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="creative">
+          <article class="service-card reveal" data-category="creative" style="transition-delay: 55ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-video"></use></svg></span><span class="service-card__number">07</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Creative Production</span>
@@ -1716,10 +1753,10 @@
               <p class="service-card__description">Scroll-stopping visual content designed for campaigns, social channels and consistent brand communication.</p>
               <ul class="service-card__list"><li>Short-form reels and ad edits</li><li>Motion graphics and explainers</li><li>Campaign and social creatives</li><li>Performance creative variations</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="creative growth">
+          <article class="service-card reveal" data-category="creative growth" style="transition-delay: 110ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-social"></use></svg></span><span class="service-card__number">08</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Community</span>
@@ -1727,10 +1764,10 @@
               <p class="service-card__description">A consistent social presence built around relevant ideas, platform-native creative and measurable audience growth.</p>
               <ul class="service-card__list"><li>Channel strategy and content planning</li><li>Content calendar and publishing</li><li>Community engagement</li><li>Monthly reporting and optimization</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="build creative">
+          <article class="service-card reveal" data-category="build creative" style="transition-delay: 165ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-ui"></use></svg></span><span class="service-card__number">09</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Product Design</span>
@@ -1738,10 +1775,10 @@
               <p class="service-card__description">Useful, intuitive interfaces shaped around real user journeys, clear hierarchy and conversion-friendly interactions.</p>
               <ul class="service-card__list"><li>User flows and information architecture</li><li>Wireframes and high-fidelity UI</li><li>Interactive prototypes</li><li>Responsive design systems</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="retention growth">
+          <article class="service-card reveal" data-category="retention growth" style="transition-delay: 0ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-email"></use></svg></span><span class="service-card__number">10</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Retention</span>
@@ -1749,10 +1786,10 @@
               <p class="service-card__description">Lifecycle campaigns that welcome, educate, recover and retain customers with timely, relevant communication.</p>
               <ul class="service-card__list"><li>Automated lifecycle flows</li><li>Campaign planning and copy</li><li>Segmentation and personalization</li><li>Testing, reporting and optimization</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="creative build">
+          <article class="service-card reveal" data-category="creative build" style="transition-delay: 55ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-brand"></use></svg></span><span class="service-card__number">11</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Brand System</span>
@@ -1760,10 +1797,10 @@
               <p class="service-card__description">A distinctive identity system that gives your brand clarity, recognition and consistency across every customer touchpoint.</p>
               <ul class="service-card__list"><li>Brand strategy and visual direction</li><li>Logo, color and typography system</li><li>Brand guidelines and templates</li><li>Launch and communication assets</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
 
-          <article class="service-card reveal" data-category="growth retention build">
+          <article class="service-card reveal" data-category="growth retention build" style="transition-delay: 110ms;">
             <div class="service-card__top"><span class="service-card__icon"><svg><use href="#icon-cro"></use></svg></span><span class="service-card__number">12</span></div>
             <div class="service-card__body">
               <span class="service-card__label">Conversion</span>
@@ -1771,7 +1808,7 @@
               <p class="service-card__description">Conversion Rate Optimization turns more of your existing traffic into leads, purchases and repeatable business growth.</p>
               <ul class="service-card__list"><li>Funnel and landing page audits</li><li>User behavior and analytics review</li><li>Hypothesis and A/B test planning</li><li>Checkout and conversion improvements</li></ul>
             </div>
-            <div class="service-card__footer"><a class="service-card__link" href="index.html#contact">Discuss this service <span>&rarr;</span></a></div>
+            <div class="service-card__footer"><a class="service-card__link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Discuss this service <span>→</span></a></div>
           </article>
         </div>
       </div>
@@ -1779,28 +1816,28 @@
 
     <section class="process-section" id="process">
       <div class="container process-grid">
-        <div class="process-intro reveal">
+        <div class="process-intro reveal" style="transition-delay: 165ms;">
           <div class="section-kicker">How engagement works</div>
           <h2>Focused process. <span class="gradient-text">Clear momentum.</span></h2>
           <p>We keep the engagement simple: understand what is blocking growth, prioritize the highest-impact work and execute with visibility.</p>
         </div>
 
         <div class="process-list">
-          <article class="process-step reveal"><span class="process-step__number">01</span><div><h3>Diagnose the opportunity</h3><p>We review your current brand, channels, website, data and customer journey to find the highest-leverage opportunities.</p></div></article>
-          <article class="process-step reveal"><span class="process-step__number">02</span><div><h3>Build the priority plan</h3><p>We define the scope, milestones, key metrics and exact service mix needed to solve the right problems first.</p></div></article>
-          <article class="process-step reveal"><span class="process-step__number">03</span><div><h3>Create and launch</h3><p>Our specialists produce, build and activate the work with fast feedback loops and clear review points.</p></div></article>
-          <article class="process-step reveal"><span class="process-step__number">04</span><div><h3>Measure and improve</h3><p>We monitor performance, identify what is working and continuously improve the system based on real outcomes.</p></div></article>
+          <article class="process-step reveal" style="transition-delay: 0ms;"><span class="process-step__number">01</span><div><h3>Diagnose the opportunity</h3><p>We review your current brand, channels, website, data and customer journey to find the highest-leverage opportunities.</p></div></article>
+          <article class="process-step reveal" style="transition-delay: 55ms;"><span class="process-step__number">02</span><div><h3>Build the priority plan</h3><p>We define the scope, milestones, key metrics and exact service mix needed to solve the right problems first.</p></div></article>
+          <article class="process-step reveal" style="transition-delay: 110ms;"><span class="process-step__number">03</span><div><h3>Create and launch</h3><p>Our specialists produce, build and activate the work with fast feedback loops and clear review points.</p></div></article>
+          <article class="process-step reveal" style="transition-delay: 165ms;"><span class="process-step__number">04</span><div><h3>Measure and improve</h3><p>We monitor performance, identify what is working and continuously improve the system based on real outcomes.</p></div></article>
         </div>
       </div>
     </section>
 
     <section class="cta-section">
       <div class="container">
-        <div class="cta-panel reveal">
+        <div class="cta-panel reveal" style="transition-delay: 0ms;">
           <div class="section-kicker">Start with clarity</div>
           <h2>Not sure which service your brand <span class="gradient-text">needs first?</span></h2>
           <p>Share your current goal and biggest challenge. We will identify the most useful starting point and recommend a focused path forward.</p>
-          <a class="button-primary" href="index.html#contact">Get Free Growth Audit</a>
+          <a class="button-primary" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Get Free Growth Audit</a>
         </div>
       </div>
     </section>
@@ -1809,8 +1846,8 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-column footer-column--brand">
-        <a class="footer-logo-link" href="index.html#top" aria-label="7Art home">
-          <img class="footer-logo" src="7Art.png" alt="7Art">
+        <a class="footer-logo-link" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#top" aria-label="7Art home">
+          <img class="footer-logo" src="./Services _ 7Art Growth Marketing Agency_files/7Art.png" alt="7Art">
         </a>
         <p class="footer-address">Address: Noida Sector 44, Delhi NCR, Uttar Pradesh (201303)</p>
       </div>
@@ -1818,51 +1855,48 @@
       <div class="footer-column">
         <h4>Company</h4>
         <nav class="footer-links" aria-label="Company links">
-          <a href="index.html#why">Why 7Art</a>
-          <a href="blog.html">Blog</a>
-          <a href="results.html">Results</a>
-          <a href="index.html#contact">Contact</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#why">Why 7Art</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/blog.html">Blog</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/results.html">Results</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/index.html#contact">Contact</a>
         </nav>
       </div>
 
       <div class="footer-column">
         <h4>Services</h4>
         <nav class="footer-links" aria-label="Service links">
-          <a href="services.html#all-services">Shopify Store Development</a>
-          <a href="services.html#all-services">Performance Marketing</a>
-          <a href="services.html#all-services">SMM</a>
-          <a href="services.html#all-services">Brand Designing</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/services.html#all-services">Shopify Store Development</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/services.html#all-services">Performance Marketing</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/services.html#all-services">SMM</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/services.html#all-services">Brand Designing</a>
         </nav>
       </div>
 
       <div class="footer-column">
         <h4>Social</h4>
         <nav class="footer-links" aria-label="Social links">
-          <a href="#">LinkedIn</a>
-          <a href="#">X / Twitter</a>
-          <a href="#">YouTube</a>
-          <a href="#">Newsletter</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/content?id=file_00000000f1c8820a842e203f0fc6b2dd&amp;fn=services-fixed.html&amp;cd=attachment&amp;ts=496016&amp;p=fs&amp;cid=1&amp;sig=265fc3362d0ddfedbc8e71fe3c472d24cc647f4c3f2762a0c10ac0e4a501f1c6&amp;v=0#">LinkedIn</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/content?id=file_00000000f1c8820a842e203f0fc6b2dd&amp;fn=services-fixed.html&amp;cd=attachment&amp;ts=496016&amp;p=fs&amp;cid=1&amp;sig=265fc3362d0ddfedbc8e71fe3c472d24cc647f4c3f2762a0c10ac0e4a501f1c6&amp;v=0#">X / Twitter</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/content?id=file_00000000f1c8820a842e203f0fc6b2dd&amp;fn=services-fixed.html&amp;cd=attachment&amp;ts=496016&amp;p=fs&amp;cid=1&amp;sig=265fc3362d0ddfedbc8e71fe3c472d24cc647f4c3f2762a0c10ac0e4a501f1c6&amp;v=0#">YouTube</a>
+          <a href="https://cpt01.gfxtoolz.ai/backend-api/estuary/content?id=file_00000000f1c8820a842e203f0fc6b2dd&amp;fn=services-fixed.html&amp;cd=attachment&amp;ts=496016&amp;p=fs&amp;cid=1&amp;sig=265fc3362d0ddfedbc8e71fe3c472d24cc647f4c3f2762a0c10ac0e4a501f1c6&amp;v=0#">Newsletter</a>
         </nav>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <span>&copy; 2026 7Art. All rights reserved.</span>
+      <span>© 2026 7Art. All rights reserved.</span>
     </div>
   </footer>
 
   <aside class="contact-float" aria-label="Contact 7Art">
-    <a class="contact-float__button contact-float__button--whatsapp"
-       href="https://wa.me/918796742031?text=Hi%207Art%2C%20I%20would%20like%20to%20discuss%20a%20project."
-       target="_blank" rel="noopener noreferrer" aria-label="Chat with 7Art on WhatsApp" title="WhatsApp: +91 8796742031">
+    <a class="contact-float__button contact-float__button--whatsapp" href="https://wa.me/918796742031?text=Hi%207Art%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="Chat with 7Art on WhatsApp" title="WhatsApp: +91 8796742031">
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.14 1.6 5.93L.08 24l6.32-1.66a11.86 11.86 0 0 0 5.68 1.45h.01C18.65 23.79 24 18.45 24 11.9c0-3.18-1.24-6.17-3.48-8.42Zm-8.44 18.3h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.75.98 1-3.65-.24-.38a9.85 9.85 0 0 1-1.51-5.25c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c-.01 5.45-4.45 9.89-9.91 9.89Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.49a9.02 9.02 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.14 1.6 5.93L.08 24l6.32-1.66a11.86 11.86 0 0 0 5.68 1.45h.01C18.65 23.79 24 18.45 24 11.9c0-3.18-1.24-6.17-3.48-8.42Zm-8.44 18.3h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.75.98 1-3.65-.24-.38a9.85 9.85 0 0 1-1.51-5.25c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c-.01 5.45-4.45 9.89-9.91 9.89Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.49a9.02 9.02 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"></path>
       </svg>
       <span class="sr-only">WhatsApp</span>
     </a>
 
-    <a class="contact-float__button contact-float__button--email"
-       href="mailto:7artsupportofficial@gmail.com" aria-label="Email 7Art" title="7artsupportofficial@gmail.com">
+    <a class="contact-float__button contact-float__button--email" href="mailto:7artsupportofficial@gmail.com" aria-label="Email 7Art" title="7artsupportofficial@gmail.com">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2.5" y="4.5" width="19" height="15" rx="2.4"></rect>
         <path d="m4.2 7 7.8 6 7.8-6"></path>
@@ -1871,7 +1905,7 @@
     </a>
   </aside>
 
-  <a class="back-to-top" href="#top" aria-label="Back to top">&uarr;</a>
+  <a class="back-to-top" href="https://cpt01.gfxtoolz.ai/backend-api/estuary/content?id=file_00000000f1c8820a842e203f0fc6b2dd&amp;fn=services-fixed.html&amp;cd=attachment&amp;ts=496016&amp;p=fs&amp;cid=1&amp;sig=265fc3362d0ddfedbc8e71fe3c472d24cc647f4c3f2762a0c10ac0e4a501f1c6&amp;v=0#top" aria-label="Back to top">↑</a>
 
   <script>
     (function () {
@@ -1976,5 +2010,288 @@
       window.addEventListener("scroll", updateBackToTop, { passive: true });
     }());
   </script>
-</body>
-</html>
+<script type="module" src="./Services _ 7Art Growth Marketing Agency_files/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;06b23b6d13c24d9bb5ff57af0bbe2799&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script>
+
+<style type="text/css">
+
+	/* Hide profile/workspace button */
+	[data-testid="accounts-profile-button"] {
+		display: none !important;
+	}
+	/* Hide invite team members button and its container */
+	.px-3\.5.pt-1.pb-3 {
+		display: none !important;
+	}
+	/* Hide upgrade/premium nags */
+	[data-testid="upgrade-button"],
+	.upgrade-btn,
+	button[aria-label="Upgrade plan"],
+	.plan-upgrade-banner,
+	[class*="paywall"] { display: none !important; }
+	
+</style>
+<script>
+
+(function() {
+  // Polyfill crypto.randomUUID for non-secure contexts (HTTP)
+  if (typeof crypto === 'undefined') {
+    window.crypto = {};
+  }
+  if (!crypto.randomUUID) {
+    crypto.randomUUID = function() {
+      if (crypto.getRandomValues) {
+        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, function(c) {
+          return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
+        });
+      } else {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+        });
+      }
+    };
+  }
+
+  var PROXY_BASE = "https://cpt01.gfxtoolz.ai";
+
+  // Force set _account cookie (needed for team account resolution)
+  var accountValue = "1fdc5a82-ffe6-4f96-8aae-5bd8e165df9a";
+  if (accountValue) {
+    var expiry = new Date();
+    expiry.setFullYear(expiry.getFullYear() + 1);
+    document.cookie = "_account=" + accountValue + "; path=/; expires=" + expiry.toUTCString();
+  }
+
+  var TARGETS = [
+    ["https://realtime.chatgpt.com", PROXY_BASE + "/_realtime"],
+    ["https://chatgpt.com", PROXY_BASE],
+    ["https://www.chatgpt.com", PROXY_BASE],
+    ["https://ab.chatgpt.com", PROXY_BASE + "/_ab"],
+    ["https://cdn.oaistatic.com", PROXY_BASE + "/_cdn"],
+    ["https://files.oaistatic.com", PROXY_BASE + "/_oaiuc/files"],
+    ["https://feather.openai.com", PROXY_BASE + "/_feather"]
+  ];
+  function rewriteUrl(u) {
+    if (typeof u === "string") {
+      for (var i = 0; i < TARGETS.length; i++) {
+        if (u.indexOf(TARGETS[i][0]) === 0) {
+          return TARGETS[i][1] + u.slice(TARGETS[i][0].length);
+        }
+      }
+      // Handle *.web-sandbox.oaiusercontent.com (Deep Research widget)
+      var sandboxMatch = u.match(/^https?:\/\/([a-zA-Z0-9_-]+)\.web-sandbox\.oaiusercontent\.com(.*)/);
+      if (sandboxMatch) {
+        return PROXY_BASE + "/_oaiuc/" + sandboxMatch[1] + ".web-sandbox" + (sandboxMatch[2] || "");
+      }
+      // Handle files.oaistatic.com
+      var oaistMatch = u.match(/^https?:\/\/files\.oaistatic\.com(.*)/);
+      if (oaistMatch) {
+        return PROXY_BASE + "/_oaiuc/files" + (oaistMatch[1] || "");
+      }
+      // Handle any *.oaiusercontent.com
+      var oaiucMatch = u.match(/^https?:\/\/([a-zA-Z0-9_.-]+)\.oaiusercontent\.com(.*)/);
+      if (oaiucMatch) {
+        return PROXY_BASE + "/_oaiuc/" + oaiucMatch[1] + (oaiucMatch[2] || "");
+      }
+    } else if (u instanceof URL) {
+      var s = u.toString();
+      var r = rewriteUrl(s);
+      if (r !== s) return r;
+    } else if (u instanceof Request) {
+      var s2 = u.url;
+      var r2 = rewriteUrl(s2);
+      if (r2 !== s2) return new Request(r2, u);
+    }
+    return u;
+  }
+  // Override fetch — also block ces/ telemetry (causes ERR_H2_OR_QUIC_REQUIRED)
+  var origFetch = window.fetch;
+  window.fetch = function(input, init) {
+    var url = typeof input === "string" ? input : (input && input.url ? input.url : "");
+    if (url.indexOf("/ces/") !== -1 || url.indexOf("/ces/statsc") !== -1 || url.indexOf("/backend-api/codex/") !== -1) {
+      return Promise.resolve(new Response('{"success":true}', {status: 200, headers: {"Content-Type": "application/json"}}));
+    }
+    input = rewriteUrl(input);
+    return origFetch.call(this, input, init);
+  };
+  // Override XMLHttpRequest.open
+  var origOpen = XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open = function(method, url) {
+    arguments[1] = rewriteUrl(url);
+    return origOpen.apply(this, arguments);
+  };
+  // Rewrite WebSocket URLs to go through the proxy (needed for conduit/async image notifications)
+  var OrigWebSocket = window.WebSocket;
+  window.WebSocket = function(url, protocols) {
+    // Rewrite wss://chatgpt.com/... to ws://localhost:2011/... (or wss://proxy/...)
+    if (typeof url === "string") {
+      for (var i = 0; i < TARGETS.length; i++) {
+        var httpsTarget = TARGETS[i][0];
+        var wssTarget = httpsTarget.replace("https://", "wss://");
+        if (url.indexOf(wssTarget) === 0) {
+          var wsBase = PROXY_BASE.replace("https://", "wss://").replace("http://", "ws://");
+          url = wsBase + TARGETS[i][1].replace(PROXY_BASE, "") + url.slice(wssTarget.length);
+          break;
+        }
+      }
+      // Also handle wss://chatgpt.com directly
+      if (url.indexOf("wss://chatgpt.com") === 0) {
+        var wsBase2 = PROXY_BASE.replace("https://", "wss://").replace("http://", "ws://");
+        url = wsBase2 + url.slice("wss://chatgpt.com".length);
+      }
+    }
+    if (protocols) return new OrigWebSocket(url, protocols);
+    return new OrigWebSocket(url);
+  };
+  window.WebSocket.prototype = OrigWebSocket.prototype;
+  window.WebSocket.CONNECTING = 0;
+  window.WebSocket.OPEN = 1;
+  window.WebSocket.CLOSING = 2;
+  window.WebSocket.CLOSED = 3;
+
+  // Intercept iframe src (Deep Research widget loads via iframe)
+  var iframeDesc = Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype, 'src');
+  if (iframeDesc && iframeDesc.set) {
+    Object.defineProperty(HTMLIFrameElement.prototype, 'src', {
+      get: iframeDesc.get,
+      set: function(value) { iframeDesc.set.call(this, rewriteUrl(value)); }
+    });
+  }
+
+  // Intercept img src
+  var imgDesc = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+  if (imgDesc && imgDesc.set) {
+    Object.defineProperty(HTMLImageElement.prototype, 'src', {
+      get: imgDesc.get,
+      set: function(value) { imgDesc.set.call(this, rewriteUrl(value)); }
+    });
+  }
+
+  // Intercept setAttribute for img and iframe
+  var origSetAttr = Element.prototype.setAttribute;
+  Element.prototype.setAttribute = function(name, value) {
+    if ((this.tagName === 'IMG' || this.tagName === 'IFRAME') && name === 'src') {
+      value = rewriteUrl(value);
+    }
+    return origSetAttr.call(this, name, value);
+  };
+
+  // Intercept anchor href
+  var aDesc = Object.getOwnPropertyDescriptor(HTMLAnchorElement.prototype, 'href');
+  if (aDesc && aDesc.set) {
+    Object.defineProperty(HTMLAnchorElement.prototype, 'href', {
+      get: aDesc.get,
+      set: function(value) { aDesc.set.call(this, rewriteUrl(value)); }
+    });
+  }
+
+  // MutationObserver to catch iframes AND images added to DOM
+  var domObs = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      m.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) {
+          // Rewrite iframe src
+          if (node.tagName === 'IFRAME' && node.src) {
+            var mapped = rewriteUrl(node.src);
+            if (mapped !== node.src) node.src = mapped;
+          }
+          // Rewrite img src (for DALL-E generated images)
+          if (node.tagName === 'IMG' && node.src) {
+            var mappedImg = rewriteUrl(node.src);
+            if (mappedImg !== node.src) node.src = mappedImg;
+          }
+          // Check children
+          if (node.querySelectorAll) {
+            node.querySelectorAll('iframe[src], img[src]').forEach(function(el) {
+              var mapped = rewriteUrl(el.src);
+              if (mapped !== el.src) el.src = mapped;
+            });
+          }
+        }
+      });
+      // Also check attribute changes (img src set after creation)
+      if (m.type === 'attributes' && m.attributeName === 'src') {
+        var t = m.target;
+        if ((t.tagName === 'IMG' || t.tagName === 'IFRAME') && t.src) {
+          var mapped = rewriteUrl(t.src);
+          if (mapped !== t.src) t.src = mapped;
+        }
+      }
+    });
+  });
+  if (document.documentElement) {
+    domObs.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+  } else {
+    document.addEventListener('DOMContentLoaded', function() {
+      domObs.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+    });
+  }
+
+  // Intercept window.open
+  var origWinOpen = window.open;
+  window.open = function(url) {
+    if (url) arguments[0] = rewriteUrl(url);
+    return origWinOpen.apply(this, arguments);
+  };
+
+  // Intercept EventSource (used for conduit/realtime SSE — delivers async image notifications)
+  var OrigEventSource = window.EventSource;
+  if (OrigEventSource) {
+    window.EventSource = function(url, config) {
+      url = rewriteUrl(url);
+      return new OrigEventSource(url, config);
+    };
+    window.EventSource.prototype = OrigEventSource.prototype;
+    window.EventSource.CONNECTING = 0;
+    window.EventSource.OPEN = 1;
+    window.EventSource.CLOSED = 2;
+  }
+
+  // Disable service worker registration
+  if ("serviceWorker" in navigator) {
+    try {
+      navigator.serviceWorker.register = function() { return Promise.resolve(); };
+      navigator.serviceWorker.getRegistrations = function() { return Promise.resolve([]); };
+    } catch(e) {}
+  }
+
+  // AUTO-RECOVERY: Detect stuck loading state and reload.
+  // If the app hasn't rendered a textarea (chat input) within 20 seconds,
+  // the page is stuck on the logo. Auto-reload up to 3 times.
+  (function() {
+    var STUCK_TIMEOUT = 20000;
+    var MAX_RELOADS = 3;
+    var KEY = '_proxy_reload_count';
+    var count = parseInt(sessionStorage.getItem(KEY) || '0');
+
+    var stuckTimer = setTimeout(function() {
+      var loaded = document.querySelector('textarea') ||
+                   document.querySelector('[data-testid="send-button"]') ||
+                   document.querySelector('main nav');
+      if (!loaded && count < MAX_RELOADS) {
+        console.log('[Proxy] Stuck detected, reloading (' + (count+1) + '/' + MAX_RELOADS + ')');
+        sessionStorage.setItem(KEY, String(count + 1));
+        window.location.reload();
+      }
+    }, STUCK_TIMEOUT);
+
+    // When app loads successfully, clear counter
+    var loadObs = new MutationObserver(function() {
+      if (document.querySelector('textarea')) {
+        clearTimeout(stuckTimer);
+        sessionStorage.removeItem(KEY);
+        loadObs.disconnect();
+      }
+    });
+    if (document.body) {
+      loadObs.observe(document.body, { childList: true, subtree: true });
+    } else {
+      document.addEventListener('DOMContentLoaded', function() {
+        loadObs.observe(document.body, { childList: true, subtree: true });
+      });
+    }
+  })();
+})();
+
+</script>
+<div id="gfxtoolz-version" data-version="9.0.1" data-name="GFXToolz" data-id="mleedijcejojojkocejemihhfcfdahab" data-timestamp="1785659035590" style="display: none;"></div></body><meta name="my-extension-installed" content="true"></html>
