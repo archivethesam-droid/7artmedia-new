@@ -228,7 +228,13 @@ button { cursor: pointer; }
 .article-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
 .article-tags span { padding: 6px 10px; border: 1px solid var(--blog-border); border-radius: 999px; color: #aaa5b2; background: rgba(255,255,255,.025); font-size: 11px; font-weight: 700; }
 .article-cover { overflow: hidden; margin: 24px 0 52px; border: 1px solid var(--blog-border); border-radius: 30px; box-shadow: var(--blog-shadow); background: #111; }
-.article-cover img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.article-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
 .article-content { color: #d7d4dc; font-size: 18px; line-height: 1.82; }
 .article-content > *:first-child { margin-top: 0; }
 .article-content h2, .article-content h3, .article-content h4 { scroll-margin-top: 120px; color: #fff; line-height: 1.18; letter-spacing: -.035em; }
