@@ -1,0 +1,212 @@
+/* Shared 7Art navigation — used on Home, Leadership, Results and Blog */
+.global-nav,
+.global-nav * {
+  box-sizing: border-box;
+}
+
+.global-nav {
+  --global-nav-text: #f8f7ff;
+  --global-nav-muted: #aaa7bb;
+  --global-nav-stroke: rgba(255, 255, 255, 0.12);
+  --global-nav-purple: #8b5cf6;
+  --global-nav-orange: #ff7a18;
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 1000;
+  width: min(1180px, calc(100% - 28px));
+  transform: translateX(-50%);
+  border: 1px solid var(--global-nav-stroke);
+  border-radius: 999px;
+  background: rgba(7, 7, 17, 0.78);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  color: var(--global-nav-text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.global-nav__inner {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 8px 10px 8px 16px;
+}
+
+.global-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  color: var(--global-nav-text);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.global-nav__mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--global-nav-purple), var(--global-nav-orange));
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.38);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.global-nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0 auto;
+}
+
+.global-nav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--global-nav-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.global-nav__link:hover,
+.global-nav__link:focus-visible,
+.global-nav__link[aria-current="page"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.global-nav__cta {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0 16px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--global-nav-purple), var(--global-nav-orange));
+  box-shadow: 0 12px 32px rgba(139, 92, 246, 0.32);
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.global-nav__cta:hover,
+.global-nav__cta:focus-visible {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 17px 42px rgba(255, 122, 24, 0.26);
+}
+
+.global-nav__toggle {
+  width: 42px;
+  height: 42px;
+  display: none;
+  place-items: center;
+  flex: 0 0 42px;
+  border: 1px solid var(--global-nav-stroke);
+  border-radius: 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+}
+
+@media (max-width: 1040px) {
+  .global-nav__inner {
+    gap: 12px;
+  }
+
+  .global-nav__links {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    display: none;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--global-nav-stroke);
+    border-radius: 24px;
+    background: rgba(7, 7, 17, 0.96);
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.42);
+  }
+
+  .global-nav__links.is-open {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .global-nav__link {
+    width: 100%;
+    min-height: 44px;
+    justify-content: flex-start;
+    padding: 0 14px;
+  }
+
+  .global-nav__cta {
+    margin-left: auto;
+  }
+
+  .global-nav__toggle {
+    display: grid;
+  }
+}
+
+@media (max-width: 680px) {
+  .global-nav {
+    top: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .global-nav__inner {
+    min-height: 56px;
+    padding: 7px 8px 7px 12px;
+  }
+
+  .global-nav__brand {
+    font-size: 17px;
+  }
+
+  .global-nav__cta {
+    display: none;
+  }
+
+  .global-nav__links.is-open {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-nav__link,
+  .global-nav__cta {
+    transition: none;
+  }
+}

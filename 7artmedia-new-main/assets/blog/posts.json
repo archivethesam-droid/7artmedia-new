@@ -1,0 +1,128 @@
+[
+  {
+    "title": "How to Build a Growth System That Actually Works",
+    "slug": "how-to-build-a-growth-system-that-actually-works",
+    "metaTitle": "Build a Growth System That Actually Works",
+    "description": "Connect strategy, content, paid media and analytics into one repeatable growth system that helps your brand make better decisions and scale sustainably.",
+    "date": "2024-03-15T09:00:00.000Z",
+    "updated": "2026-07-12T06:00:00.000Z",
+    "author": "Priya Sharma",
+    "category": "Growth Strategy",
+    "tags": [
+      "Growth",
+      "Strategy",
+      "Systems"
+    ],
+    "featured": true,
+    "draft": false,
+    "featuredImage": "/assets/blog/placeholders/growth-system.svg",
+    "featuredImageAlt": "Abstract purple and orange growth system framework with connected stages",
+    "readTime": "3 min read",
+    "url": "/blog/how-to-build-a-growth-system-that-actually-works/"
+  },
+  {
+    "title": "AI Tools That Actually Improve Marketing Execution",
+    "slug": "ai-tools-that-improve-marketing-execution",
+    "metaTitle": "AI Tools That Improve Marketing Execution",
+    "description": "Use AI to improve marketing research, planning, creative testing and reporting without losing the human judgment that makes your brand distinctive.",
+    "date": "2024-03-12T09:00:00.000Z",
+    "updated": "2026-07-12T06:00:00.000Z",
+    "author": "Rahul Verma",
+    "category": "AI & Automation",
+    "tags": [
+      "AI",
+      "Automation",
+      "Marketing"
+    ],
+    "featured": false,
+    "draft": false,
+    "featuredImage": "/assets/blog/placeholders/ai-marketing.svg",
+    "featuredImageAlt": "Abstract AI marketing workflow with connected purple and orange nodes",
+    "readTime": "3 min read",
+    "url": "/blog/ai-tools-that-improve-marketing-execution/"
+  },
+  {
+    "title": "Why Your Ads Are Not Converting and How to Fix It",
+    "slug": "why-your-ads-are-not-converting",
+    "metaTitle": "Why Your Ads Are Not Converting",
+    "description": "Diagnose low-converting ads by checking audience intent, creative clarity, offer strength and landing-page continuity before increasing your media budget.",
+    "date": "2024-03-10T09:00:00.000Z",
+    "updated": "2026-07-12T06:00:00.000Z",
+    "author": "Anjali Patel",
+    "category": "Marketing",
+    "tags": [
+      "Ads",
+      "Conversion",
+      "Performance"
+    ],
+    "featured": false,
+    "draft": false,
+    "featuredImage": "/assets/blog/placeholders/ads-converting.svg",
+    "featuredImageAlt": "Marketing conversion dashboard with a rising purple and orange performance line",
+    "readTime": "3 min read",
+    "url": "/blog/why-your-ads-are-not-converting/"
+  },
+  {
+    "title": "Content That Converts: A Data-Driven Approach",
+    "slug": "content-that-converts-data-driven-approach",
+    "metaTitle": "Content That Converts With a Data-Driven Approach",
+    "description": "Build a content system around customer intent, evidence and measurable business outcomes instead of publishing disconnected posts that create little action.",
+    "date": "2024-03-08T09:00:00.000Z",
+    "updated": "2026-07-12T06:00:00.000Z",
+    "author": "Vikram Singh",
+    "category": "Content",
+    "tags": [
+      "Content",
+      "Audience",
+      "Conversion"
+    ],
+    "featured": false,
+    "draft": false,
+    "featuredImage": "/assets/blog/placeholders/content-converts.svg",
+    "featuredImageAlt": "Content strategy blocks flowing into a purple and orange conversion path",
+    "readTime": "3 min read",
+    "url": "/blog/content-that-converts-data-driven-approach/"
+  },
+  {
+    "title": "Building a Paid Ad Strategy That Scales",
+    "slug": "building-a-paid-ad-strategy-that-scales",
+    "metaTitle": "Build a Paid Ad Strategy That Scales",
+    "description": "Scale paid media with stronger unit economics, structured creative testing and budget rules that protect efficiency as campaign volume increases.",
+    "date": "2024-03-05T09:00:00.000Z",
+    "updated": "2026-07-12T06:00:00.000Z",
+    "author": "Deepa Nair",
+    "category": "Paid Media",
+    "tags": [
+      "Paid Ads",
+      "Scaling",
+      "Strategy"
+    ],
+    "featured": false,
+    "draft": false,
+    "featuredImage": "/assets/blog/placeholders/paid-ad-strategy.svg",
+    "featuredImageAlt": "Paid advertising scale framework represented by layered purple and orange bars",
+    "readTime": "3 min read",
+    "url": "/blog/building-a-paid-ad-strategy-that-scales/"
+  },
+  {
+    "title": "How to Measure What Actually Matters in Marketing",
+    "slug": "how-to-measure-what-matters-in-marketing",
+    "metaTitle": "Measure What Actually Matters in Marketing",
+    "description": "Replace vanity metrics with a practical measurement model that connects marketing activity to customer behaviour, revenue quality and business decisions.",
+    "date": "2024-03-01T09:00:00.000Z",
+    "updated": "2026-07-12T06:00:00.000Z",
+    "author": "Arjun Desai",
+    "category": "Growth Strategy",
+    "tags": [
+      "Metrics",
+      "Analytics",
+      "ROI"
+    ],
+    "featured": false,
+    "draft": false,
+    "featuredImage": "/assets/blog/placeholders/marketing-metrics.svg",
+    "featuredImageAlt": "Marketing measurement dashboard with dark purple and orange data visualisation",
+    "readTime": "3 min read",
+    "url": "/blog/how-to-measure-what-matters-in-marketing/"
+  }
+]
