@@ -44,4 +44,57 @@ for (const entry of await fs.readdir(ROOT, { withFileTypes: true })) {
   }
 }
 
+const GTM_ID = 'GTM-TNB5LWVR';
+
+// GTM Head Code
+const gtmHead = `<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');</script>
+<!-- End Google Tag Manager -->`;
+
+// GTM Body Code
+const gtmBody = `<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->`;
+
+// Automatically install GTM on public HTML pages
+async function installGTM(directory) {
+  for (const entry of await fs.readdir(directory, { withFileTypes: true })) {
+    const filePath = path.join(directory, entry.name);
+    const relativePath = path.relative(DIST, filePath);
+
+    if (relativePath.split(path.sep)[0] === 'admin') continue;
+
+    if (entry.isDirectory()) {
+      await installGTM(filePath);
+      continue;
+    }
+
+    if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
+
+    let html = await fs.readFile(filePath, 'utf8');
+
+    if (!/<head\b[^>]*>/i.test(html) ||
+        !/<body\b[^>]*>/i.test(html)) continue;
+
+    if (html.includes('googletagmanager.com/gtm.js')) continue;
+
+    html = html.replace(/<head\b[^>]*>/i,
+      tag => `${tag}\n${gtmHead}`);
+
+    html = html.replace(/<body\b[^>]*>/i,
+      tag => `${tag}\n${gtmBody}`);
+
+    await fs.writeFile(filePath, html, 'utf8');
+  }
+}
+
+await installGTM(DIST);
+console.log('GTM installation completed');
+
 console.log(`Production site exported to ${DIST}`);
