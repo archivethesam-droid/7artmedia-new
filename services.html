@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global-navbar.css?v=3">
 
   <script type="application/ld+json">
   {
@@ -122,81 +123,6 @@
       margin-inline: auto;
     }
 
-    .global-nav {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      z-index: 1000;
-      width: min(var(--max), calc(100% - 28px));
-      transform: translateX(-50%);
-      border: 1px solid var(--stroke);
-      border-radius: 999px;
-      background: rgba(7, 7, 17, 0.78);
-      -webkit-backdrop-filter: blur(22px);
-      backdrop-filter: blur(22px);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-    }
-
-    .global-nav__inner {
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 8px 10px 8px 16px;
-    }
-
-    .global-nav__brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      flex: 0 0 auto;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-    }
-
-    .global-nav__mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--gradient);
-      box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
-      font-size: 16px;
-      font-weight: 900;
-    }
-
-    .global-nav__links {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      margin: 0 auto;
-    }
-
-    .global-nav__link {
-      min-height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 12px;
-      border-radius: 999px;
-      color: var(--muted);
-      white-space: nowrap;
-      font-size: 14px;
-      font-weight: 600;
-      transition: color 0.25s ease, background 0.25s ease;
-    }
-
-    .global-nav__link:hover,
-    .global-nav__link:focus-visible,
-    .global-nav__link[aria-current="page"] {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
     .global-nav__cta,
     .button-primary {
       display: inline-flex;
@@ -211,31 +137,10 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .global-nav__cta {
-      min-height: 42px;
-      flex: 0 0 auto;
-      padding: 0 16px;
-      white-space: nowrap;
-      font-size: 14px;
-    }
-
     .global-nav__cta:hover,
     .button-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 20px 48px rgba(255, 122, 24, 0.26);
-    }
-
-    .global-nav__toggle {
-      width: 42px;
-      height: 42px;
-      display: none;
-      place-items: center;
-      flex: 0 0 42px;
-      border: 1px solid var(--stroke);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.06);
-      cursor: pointer;
-      font-size: 20px;
     }
 
     main {
@@ -898,43 +803,6 @@
     }
 
     @media (max-width: 1060px) {
-      .global-nav__links {
-        position: absolute;
-        top: calc(100% + 12px);
-        left: 0;
-        right: 0;
-        display: none;
-        margin: 0;
-        padding: 12px;
-        border: 1px solid var(--stroke);
-        border-radius: 24px;
-        background: rgba(7, 7, 17, 0.97);
-        -webkit-backdrop-filter: blur(22px);
-        backdrop-filter: blur(22px);
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.42);
-      }
-
-      .global-nav__links.is-open {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px;
-      }
-
-      .global-nav__link {
-        width: 100%;
-        min-height: 44px;
-        justify-content: flex-start;
-        padding: 0 14px;
-      }
-
-      .global-nav__cta {
-        margin-left: auto;
-      }
-
-      .global-nav__toggle {
-        display: grid;
-      }
-
       .services-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1005,24 +873,6 @@
     }
 
     @media (max-width: 620px) {
-      .global-nav {
-        top: 10px;
-        width: calc(100% - 20px);
-      }
-
-      .global-nav__inner {
-        min-height: 56px;
-        padding: 7px 8px 7px 12px;
-      }
-
-      .global-nav__cta {
-        display: none;
-      }
-
-      .global-nav__links.is-open {
-        grid-template-columns: 1fr;
-      }
-
       .hero__actions {
         display: grid;
       }
@@ -1292,25 +1142,6 @@
 
 
     /* 7Art supplied logo + reference-matched footer */
-    /* Keep the services navbar aligned with the home-page navbar. */
-    .global-nav {
-      width: min(var(--max), calc(100% - 28px));
-    }
-
-    .global-nav__brand {
-      min-width: 104px;
-      gap: 0;
-      line-height: 1;
-    }
-
-    .global-nav__logo {
-      width: auto;
-      height: 50px;
-      max-width: 112px;
-      display: block;
-      object-fit: contain;
-    }
-
     .footer {
       padding: 58px 0 34px;
       border-top: 1px solid rgba(255, 255, 255, 0.10);
@@ -1468,11 +1299,6 @@
     }
 
     @media (max-width: 760px) {
-      .global-nav__logo {
-        height: 20px;
-        max-width: 112px;
-      }
-
       .footer {
         padding: 48px 0 28px;
       }
@@ -1564,13 +1390,13 @@
     <symbol id="icon-cro" viewBox="0 0 24 24"><path d="M4 19V5m0 14h16"/><path d="m7 15 4-4 3 2 5-6"/><circle cx="19" cy="7" r="1.5"/></symbol>
   </svg>
 
-  <nav class="global-nav" aria-label="Primary navigation">
+  <nav class="global-nav" aria-label="Primary navigation" data-global-nav>
     <div class="global-nav__inner">
       <a class="global-nav__brand" href="index.html#top" aria-label="7Art home">
         <img class="global-nav__logo" src="7Art.png" alt="7Art">
       </a>
 
-  <div class="global-nav__links" id="globalNavLinks">
+  <div class="global-nav__links" id="globalNavLinks" data-global-nav-links>
     <a class="global-nav__link" href="index.html#ecosystem">Ecosystem</a>
     <a class="global-nav__link" href="leadership.html">Leadership</a>
     <a class="global-nav__link" href="index.html#framework">Framework</a>
@@ -1581,7 +1407,7 @@
   </div>
 
   <a class="global-nav__cta" href="index.html#contact">Get Free Growth Audit</a>
-  <button class="global-nav__toggle" type="button" aria-label="Open navigation" aria-controls="globalNavLinks" aria-expanded="false">&#9776;</button>
+  <button class="global-nav__toggle" type="button" aria-label="Open navigation" aria-controls="globalNavLinks" aria-expanded="false" data-global-nav-toggle>☰</button>
 </div>
 
   </nav>
@@ -1883,35 +1709,6 @@
     (function () {
       "use strict";
 
-      var menuButton = document.querySelector(".global-nav__toggle");
-      var menu = document.getElementById("globalNavLinks");
-
-      if (menuButton && menu) {
-        menuButton.addEventListener("click", function () {
-          var isOpen = menu.classList.toggle("is-open");
-          menuButton.setAttribute("aria-expanded", String(isOpen));
-          menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-          menuButton.innerHTML = isOpen ? "&times;" : "&#9776;";
-        });
-
-        menu.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            menu.classList.remove("is-open");
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation");
-            menuButton.innerHTML = "&#9776;";
-          });
-        });
-
-        document.addEventListener("click", function (event) {
-          if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
-            menu.classList.remove("is-open");
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.innerHTML = "&#9776;";
-          }
-        });
-      }
-
       var filterButtons = document.querySelectorAll(".filter-button");
       var serviceCards = document.querySelectorAll(".service-card");
 
@@ -1984,5 +1781,7 @@
   </script>
 
 <script src="snow-effect.js"></script>
+<script src="global-navbar.js" defer></script>
+<script src="assets/7art-chatbot-loader.js" defer></script>
 </body>
 </html>

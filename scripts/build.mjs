@@ -107,9 +107,10 @@ function nav(prefix = '/') {
   <nav class="global-nav" aria-label="Primary navigation" data-global-nav>
     <div class="global-nav__inner">
       <a class="global-nav__brand" href="${prefix}index.html" aria-label="7Art home">
-        <span class="global-nav__mark" aria-hidden="true">7</span><span>7Art</span>
+        <img class="global-nav__logo" src="${prefix}7Art.png" alt="7Art">
       </a>
       <div class="global-nav__links" id="globalNavLinks" data-global-nav-links>
+        <a class="global-nav__link" href="${prefix}index.html#ecosystem">Ecosystem</a>
         <a class="global-nav__link" href="${prefix}leadership.html">Leadership</a>
         <a class="global-nav__link" href="${prefix}index.html#framework">Framework</a>
         <a class="global-nav__link" href="${prefix}index.html#services">Services</a>
@@ -128,14 +129,33 @@ function footer(prefix = '/') {
   <footer class="blog-footer-site">
     <div class="blog-footer-grid">
       <div>
-        <a class="footer-brand" href="${prefix}index.html"><span>7</span>7Art</a>
-        <p>AI-assisted growth marketing for D2C brands.</p>
+        <a class="footer-brand" href="${prefix}index.html" aria-label="7Art home"><img class="footer-brand__logo" src="${prefix}7Art.png" alt="7Art"></a>
+        <p>Address: Noida Sector 44, Delhi NCR, Uttar Pradesh (201303)</p>
       </div>
-      <div><h2>Explore</h2><a href="${prefix}results.html">Results</a><a href="${prefix}leadership.html">Leadership</a><a href="${prefix}blog.html">Blog</a></div>
-      <div><h2>Services</h2><a href="${prefix}index.html#services">Growth Strategy</a><a href="${prefix}index.html#services">Performance Marketing</a><a href="${prefix}index.html#services">Content & Creative</a></div>
-      <div><h2>Start a conversation</h2><a href="mailto:7artsupportofficial@gmail.com">7artsupportofficial@gmail.com</a><a href="${prefix}index.html#contact">Get a free growth audit</a></div>
+      <div>
+        <h2>Company</h2>
+        <a href="${prefix}index.html#why">Why 7Art</a>
+        <a href="${prefix}results.html">Case Studies</a>
+        <a href="${prefix}results.html">Results</a>
+        <a href="${prefix}index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <a href="${prefix}index.html#ecosystem">Shopify Store Development</a>
+        <a href="${prefix}index.html#framework">Performance Marketing</a>
+        <a href="${prefix}index.html#services">SMM</a>
+        <a href="${prefix}index.html#faq">Brand Designing</a>
+      </div>
+      <div>
+        <h2>Social</h2>
+        <a href="https://www.linkedin.com/company/7artmedia">LinkedIn</a>
+        <a href="https://www.instagram.com/7artmedia.in">Instagram</a>
+        <a href="https://www.reddit.com/user/7Art_/">Reddit</a>
+        <a href="https://wa.me/918796742031?text=Hi%207Art%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="Message 7Art on WhatsApp">WhatsApp: +91 8796742031</a>
+        <a href="mailto:7artsupportofficial@gmail.com">7artsupportofficial@gmail.com</a>
+      </div>
     </div>
-    <div class="blog-footer-bottom">© ${new Date().getUTCFullYear()} 7Art Media. All rights reserved.</div>
+    <div class="blog-footer-bottom">© 2026 7Art. All rights reserved.</div>
   </footer>`;
 }
 
@@ -191,8 +211,8 @@ function renderBlogIndex(posts) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/global-navbar.css">
-  <link rel="stylesheet" href="/blog-shared.css">
+  <link rel="stylesheet" href="/global-navbar.css?v=3">
+  <link rel="stylesheet" href="/blog-shared.css?v=4">
   <link rel="stylesheet" href="/lead-popup.css?v=2">
   <script type="application/ld+json">${safeJson(itemList)}</script>
 </head>
@@ -236,6 +256,7 @@ function renderBlogIndex(posts) {
   <script src="/global-navbar.js"></script>
   <script src="/blog.js"></script>
   <script src="/lead-popup.js?v=2"></script>
+  <script src="assets/7art-chatbot-loader.js" defer></script>
 </body>
 </html>`;
 }
@@ -297,8 +318,8 @@ function renderArticle(post, posts) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/global-navbar.css">
-  <link rel="stylesheet" href="/blog-shared.css">
+  <link rel="stylesheet" href="/global-navbar.css?v=3">
+  <link rel="stylesheet" href="/blog-shared.css?v=4">
   <link rel="stylesheet" href="/lead-popup.css?v=2">
   <script type="application/ld+json">${safeJson(schema)}</script>
 </head>
@@ -324,6 +345,7 @@ function renderArticle(post, posts) {
   ${footer('/')}
   <script src="/global-navbar.js"></script>
   <script src="/lead-popup.js?v=2"></script>
+  <script src="../../assets/7art-chatbot-loader.js" defer></script>
 </body>
 </html>`;
 }

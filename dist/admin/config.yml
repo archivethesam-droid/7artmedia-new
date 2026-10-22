@@ -1,0 +1,129 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME
+  branch: main
+  base_url: http://localhost:3000
+  auth_endpoint: api/begin
+  squash_merges: true
+  commit_messages:
+    create: "Create blog post: {{slug}}"
+    update: "Update blog post: {{slug}}"
+    delete: "Delete blog post: {{slug}}"
+    uploadMedia: "Upload blog image: {{path}}"
+    deleteMedia: "Delete blog image: {{path}}"
+publish_mode: editorial_workflow
+site_url: http://localhost:3000
+display_url: http://localhost:3000
+logo:
+  src: http://localhost:3000/favicon.png
+  show_in_header: true
+
+media_folder: assets/blog/uploads
+public_folder: /assets/blog/uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: blog
+    label: Blog Posts
+    label_singular: Blog Post
+    description: Create, edit, review and publish SEO-friendly blog posts.
+    folder: content/blog
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{fields.slug}}"
+    preview_path: "blog/{{fields.slug}}/"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: [date, title, author, category]
+    view_filters:
+      - label: Drafts hidden from website
+        field: draft
+        pattern: true
+      - label: Featured posts
+        field: featured
+        pattern: true
+    editor:
+      preview: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: Main H1 heading shown on the blog page.
+      - label: URL Slug
+        name: slug
+        widget: string
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Use lowercase letters, numbers and hyphens only. Example: improve-google-ads-roas']
+        hint: Final URL will be /blog/your-slug/. Do not change it after publishing unless redirects are added.
+      - label: SEO Title
+        name: meta_title
+        widget: string
+        required: false
+        hint: Keep this around 50–60 characters. If empty, the post title is used.
+      - label: Meta Description
+        name: description
+        widget: text
+        hint: Write a clear 120–160 character summary for Google and social sharing.
+      - label: Publish Date
+        name: date
+        widget: datetime
+        format: YYYY-MM-DDTHH:mm:ssZ
+        date_format: DD MMM YYYY
+        time_format: HH:mm
+      - label: Last Updated
+        name: updated
+        widget: datetime
+        required: false
+        format: YYYY-MM-DDTHH:mm:ssZ
+        date_format: DD MMM YYYY
+        time_format: HH:mm
+      - label: Author
+        name: author
+        widget: string
+        default: 7Art Team
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Growth Strategy
+          - Marketing
+          - Content
+          - AI & Automation
+          - SEO
+          - Paid Media
+          - Case Study
+      - label: Tags
+        name: tags
+        widget: list
+        allow_add: true
+        default: []
+      - label: Featured Post
+        name: featured
+        widget: boolean
+        default: false
+        hint: Featured posts appear first on the blog listing.
+      - label: Draft — hide from website
+        name: draft
+        widget: boolean
+        default: true
+        hint: Keep enabled while writing. Disable it before publishing the post.
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        choose_url: false
+        media_library:
+          config:
+            multiple: false
+      - label: Featured Image Alt Text
+        name: featured_image_alt
+        widget: string
+        hint: Describe the image for accessibility and image SEO.
+      - label: Article Content
+        name: body
+        widget: markdown
+        buttons: [bold, italic, code, link, heading-two, heading-three, heading-four, quote, bulleted-list, numbered-list]
+        editor_components: [image]
