@@ -2018,7 +2018,7 @@ pointer-events:none!important;
 #portfolio .portfolio-track {
   display: flex;
   width: max-content;
-  animation: portfolioRtl 62s linear infinite;
+  animation: portfolioRtl var(--portfolio-loop-duration, 62s) linear infinite;
   will-change: transform;
 }
 
@@ -2069,6 +2069,7 @@ pointer-events:none!important;
   object-fit: cover;
   object-position: top center;
   border-radius: inherit;
+  -webkit-user-drag: none;
 }
 
 #portfolio .portfolio-brand {
@@ -2090,10 +2091,21 @@ pointer-events:none!important;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
-#portfolio .portfolio-marquee:hover .portfolio-track {
+#portfolio .portfolio-marquee-wrap.is-hover-paused .portfolio-track,
+#portfolio .portfolio-marquee-wrap.is-dragging .portfolio-track {
   animation-play-state: paused;
 }
 
+#portfolio .portfolio-marquee {
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#portfolio .portfolio-marquee-wrap.is-dragging .portfolio-marquee {
+  cursor: grabbing;
+}
 @keyframes portfolioRtl {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -2119,7 +2131,7 @@ pointer-events:none!important;
   }
 
   #portfolio .portfolio-track {
-    animation-duration: 46s;
+    --portfolio-loop-duration: 46s;
   }
 
   #portfolio .portfolio-loop-group {
@@ -2159,7 +2171,7 @@ pointer-events:none!important;
   }
 
   #portfolio .portfolio-track {
-    animation-duration: 38s;
+    --portfolio-loop-duration: 38s;
   }
 
   #portfolio .portfolio-loop-group {
@@ -2186,55 +2198,27 @@ pointer-events:none!important;
   }
 }
 
-/* ==================================================
-   SOCIAL MEDIA CREATIVES 3:4 LAYOUT
-   - 9 placeholder posts ready for final images
-   - Premium gradient frame, subtle radius, brand-style label patches
-   - Supports assets/creatives/creative-01 in .png, .jpg, .jpeg, or .webp format
-================================================== */
+/* SOCIAL MEDIA CREATIVES */
 #social-media .creative-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 36px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
 }
 
-#social-media .creative-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 8px;
-  overflow: hidden;
-  border: 1px solid transparent;
-  border-radius: 20px;
-  background:
-    linear-gradient(180deg, rgba(7, 7, 17, 0.92), rgba(10, 9, 24, 0.9)) padding-box,
-    linear-gradient(135deg, rgba(255,255,255,0.32), rgba(168,85,247,0.82), rgba(255,122,24,0.78), rgba(255,236,214,0.58)) border-box;
-  box-shadow: 0 16px 52px rgba(0, 0, 0, 0.34);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-}
-
-#social-media .creative-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 0%, rgba(168, 85, 247, 0.14), transparent 14rem),
-    radial-gradient(circle at 100% 100%, rgba(255, 122, 24, 0.12), transparent 12rem);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
+#social-media .creative-card,
+#social-media .creative-card.reveal,
 #social-media .creative-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 24px 70px rgba(139, 92, 246, 0.24);
-  filter: saturate(1.04);
-}
-
-#social-media .creative-card:hover::before {
+  display: block;
+  min-width: 0;
+  padding: 6px;
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 14px 42px rgba(0,0,0,0.22);
   opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 #social-media .creative-media {
@@ -2242,9 +2226,8 @@ pointer-events:none!important;
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 11px;
   background: rgba(255,255,255,0.045);
-  z-index: 1;
 }
 
 #social-media .creative-media img {
@@ -2257,85 +2240,31 @@ pointer-events:none!important;
 }
 
 #social-media .creative-caption {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 0 4px 3px;
-}
-
-#social-media .creative-name,
-#social-media .creative-ratio {
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  border: 1px solid transparent;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-#social-media .creative-name {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background:
-    linear-gradient(180deg, rgba(12, 12, 28, 0.94), rgba(19, 17, 38, 0.92)) padding-box,
-    linear-gradient(135deg, rgba(255,255,255,0.24), rgba(168,85,247,0.78), rgba(255,122,24,0.72)) border-box;
-  color: #f5f1ff;
-  font-size: 0.9rem;
-  font-weight: 850;
-  letter-spacing: 0.01em;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-}
-
-#social-media .creative-ratio {
-  padding: 8px 11px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.1);
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  display: none;
 }
 
 @media (max-width: 1040px) {
   #social-media .creative-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
   }
 }
 
 @media (max-width: 640px) {
   #social-media .creative-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 26px;
-  }
-
-  #social-media .creative-card {
-    padding: 7px;
-    border-radius: 16px;
-  }
-
-  #social-media .creative-media {
-    border-radius: 12px;
-  }
-
-  #social-media .creative-caption {
-    align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
   }
 
-  #social-media .creative-name {
-    font-size: 0.86rem;
+  #social-media .creative-card {
+    padding: 4px;
+    border-radius: 12px;
+  }
+
+  #social-media .creative-media {
+    border-radius: 8px;
   }
 }
-
-
 #social-media .creative-placeholder-text {
   position: absolute;
   inset: 0;
@@ -2364,8 +2293,8 @@ pointer-events:none!important;
 }
 
   </style>
-  <link rel="stylesheet" href="global-navbar.css?v=3" />
-  <link rel="stylesheet" href="lead-popup.css?v=2">
+  <link rel="stylesheet" href="global-navbar.css?v=6" />
+  <link rel="stylesheet" href="lead-popup.css?v=12">
 <link rel="stylesheet" href="snow-effect.css" />
 </head>
 <body class="results-page">
@@ -2622,7 +2551,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="creative-grid" aria-label="Social media creative gallery">
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-01.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-01 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-01.png" data-creative-base="assets/creatives/creative-01" data-format-index="0" alt="Creative 01 social media creative" loading="lazy" />
             </div>
@@ -2632,7 +2561,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-02.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-02 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-02.png" data-creative-base="assets/creatives/creative-02" data-format-index="0" alt="Creative 02 social media creative" loading="lazy" />
             </div>
@@ -2642,7 +2571,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-03.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-03 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-03.png" data-creative-base="assets/creatives/creative-03" data-format-index="0" alt="Creative 03 social media creative" loading="lazy" />
             </div>
@@ -2652,7 +2581,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-04.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-04 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-04.png" data-creative-base="assets/creatives/creative-04" data-format-index="0" alt="Creative 04 social media creative" loading="lazy" />
             </div>
@@ -2662,7 +2591,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-05.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-05 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-05.png" data-creative-base="assets/creatives/creative-05" data-format-index="0" alt="Creative 05 social media creative" loading="lazy" />
             </div>
@@ -2672,7 +2601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-06.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-06 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-06.png" data-creative-base="assets/creatives/creative-06" data-format-index="0" alt="Creative 06 social media creative" loading="lazy" />
             </div>
@@ -2682,7 +2611,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-07.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-07 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-07.png" data-creative-base="assets/creatives/creative-07" data-format-index="0" alt="Creative 07 social media creative" loading="lazy" />
             </div>
@@ -2692,7 +2621,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-08.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-08 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-08.png" data-creative-base="assets/creatives/creative-08" data-format-index="0" alt="Creative 08 social media creative" loading="lazy" />
             </div>
@@ -2702,12 +2631,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
           <article class="creative-card reveal">
-            <!-- Add final 3:4 creative as creative-09.png, .jpg, .jpeg, or .webp inside assets/creatives/ -->
+            <!-- Add creative-09 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
             <div class="creative-media">
               <img src="assets/creatives/creative-09.png" data-creative-base="assets/creatives/creative-09" data-format-index="0" alt="Creative 09 social media creative" loading="lazy" />
             </div>
             <div class="creative-caption">
               <span class="creative-name">Creative 09</span>
+              <span class="creative-ratio">3:4</span>
+            </div>
+          </article>
+          <article class="creative-card reveal">
+            <!-- Add creative-10 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
+            <div class="creative-media">
+              <img src="assets/creatives/creative-10.png" data-creative-base="assets/creatives/creative-10" data-format-index="0" alt="Creative 10 social media creative" loading="lazy" />
+            </div>
+            <div class="creative-caption">
+              <span class="creative-name">Creative 10</span>
+              <span class="creative-ratio">3:4</span>
+            </div>
+          </article>
+          <article class="creative-card reveal">
+            <!-- Add creative-11 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
+            <div class="creative-media">
+              <img src="assets/creatives/creative-11.png" data-creative-base="assets/creatives/creative-11" data-format-index="0" alt="Creative 11 social media creative" loading="lazy" />
+            </div>
+            <div class="creative-caption">
+              <span class="creative-name">Creative 11</span>
+              <span class="creative-ratio">3:4</span>
+            </div>
+          </article>
+          <article class="creative-card reveal">
+            <!-- Add creative-12 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
+            <div class="creative-media">
+              <img src="assets/creatives/creative-12.png" data-creative-base="assets/creatives/creative-12" data-format-index="0" alt="Creative 12 social media creative" loading="lazy" />
+            </div>
+            <div class="creative-caption">
+              <span class="creative-name">Creative 12</span>
+              <span class="creative-ratio">3:4</span>
+            </div>
+          </article>
+          <article class="creative-card reveal">
+            <!-- Add creative-13 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
+            <div class="creative-media">
+              <img src="assets/creatives/creative-13.png" data-creative-base="assets/creatives/creative-13" data-format-index="0" alt="Creative 13 social media creative" loading="lazy" />
+            </div>
+            <div class="creative-caption">
+              <span class="creative-name">Creative 13</span>
+              <span class="creative-ratio">3:4</span>
+            </div>
+          </article>
+          <article class="creative-card reveal">
+            <!-- Add creative-14 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
+            <div class="creative-media">
+              <img src="assets/creatives/creative-14.png" data-creative-base="assets/creatives/creative-14" data-format-index="0" alt="Creative 14 social media creative" loading="lazy" />
+            </div>
+            <div class="creative-caption">
+              <span class="creative-name">Creative 14</span>
+              <span class="creative-ratio">3:4</span>
+            </div>
+          </article>
+          <article class="creative-card reveal">
+            <!-- Add creative-15 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
+            <div class="creative-media">
+              <img src="assets/creatives/creative-15.png" data-creative-base="assets/creatives/creative-15" data-format-index="0" alt="Creative 15 social media creative" loading="lazy" />
+            </div>
+            <div class="creative-caption">
+              <span class="creative-name">Creative 15</span>
+              <span class="creative-ratio">3:4</span>
+            </div>
+          </article>
+          <article class="creative-card reveal">
+            <!-- Add creative-16 as PNG, JPG, JPEG, or WEBP inside assets/creatives/ -->
+            <div class="creative-media">
+              <img src="assets/creatives/creative-16.png" data-creative-base="assets/creatives/creative-16" data-format-index="0" alt="Creative 16 social media creative" loading="lazy" />
+            </div>
+            <div class="creative-caption">
+              <span class="creative-name">Creative 16</span>
               <span class="creative-ratio">3:4</span>
             </div>
           </article>
@@ -2801,7 +2800,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.14 });
 
-document.querySelectorAll(".reveal").forEach((el, index) => {
+document.querySelectorAll(".reveal:not(.creative-card)").forEach((el, index) => {
   el.style.transitionDelay = `${Math.min(index % 5, 4) * 65}ms`;
   observer.observe(el);
 });
@@ -2849,40 +2848,130 @@ if (contactForm) {
   });
 }
 
+const portfolioMarqueeWrap = document.querySelector("#portfolio .portfolio-marquee-wrap");
+const portfolioMarquee = portfolioMarqueeWrap?.querySelector(".portfolio-marquee");
+const portfolioTrack = portfolioMarquee?.querySelector(".portfolio-track");
+let portfolioPointer = null;
+let suppressPortfolioClick = false;
+
+const getPortfolioAnimation = () => portfolioTrack?.getAnimations()[0];
+
+portfolioMarqueeWrap?.addEventListener("pointerenter", (event) => {
+  if (event.pointerType !== "mouse") return;
+  portfolioMarqueeWrap.classList.add("is-hover-paused");
+});
+
+portfolioMarqueeWrap?.addEventListener("pointerleave", (event) => {
+  if (event.pointerType !== "mouse" || portfolioPointer) return;
+  portfolioMarqueeWrap.classList.remove("is-hover-paused");
+  getPortfolioAnimation()?.play();
+});
+
+portfolioMarquee?.addEventListener("pointerdown", (event) => {
+  if (event.pointerType === "mouse" && event.button !== 0) return;
+  portfolioPointer = {
+    id: event.pointerId,
+    startX: event.clientX,
+    lastX: event.clientX,
+    dragging: false
+  };
+});
+
+portfolioMarquee?.addEventListener("dragstart", (event) => {
+  event.preventDefault();
+});
+
+portfolioMarquee?.addEventListener("pointermove", (event) => {
+  if (!portfolioPointer || event.pointerId !== portfolioPointer.id) return;
+
+  if (!portfolioPointer.dragging && Math.abs(event.clientX - portfolioPointer.startX) < 6) return;
+
+  const animation = getPortfolioAnimation();
+  if (!animation) return;
+
+  if (!portfolioPointer.dragging) {
+    portfolioPointer.dragging = true;
+    portfolioMarqueeWrap.classList.add("is-dragging");
+    animation.pause();
+    portfolioMarquee.setPointerCapture(event.pointerId);
+  }
+
+  const duration = Number(animation.effect.getTiming().duration);
+  const loopWidth = portfolioTrack.scrollWidth / 2;
+  if (!Number.isFinite(duration) || loopWidth <= 0) return;
+
+  const elapsed = Number(animation.currentTime) -
+    ((event.clientX - portfolioPointer.lastX) / loopWidth) * duration;
+  animation.currentTime = ((elapsed % duration) + duration) % duration;
+  portfolioPointer.lastX = event.clientX;
+});
+
+const finishPortfolioPointer = (event) => {
+  if (!portfolioPointer || event.pointerId !== portfolioPointer.id) return;
+  const wasDragging = portfolioPointer.dragging;
+  portfolioPointer = null;
+  portfolioMarqueeWrap.classList.remove("is-dragging");
+
+  if (wasDragging) {
+    suppressPortfolioClick = true;
+    window.setTimeout(() => { suppressPortfolioClick = false; }, 0);
+    if (!portfolioMarqueeWrap.matches(":hover")) {
+      portfolioMarqueeWrap.classList.remove("is-hover-paused");
+      getPortfolioAnimation()?.play();
+    }
+  }
+};
+
+portfolioMarquee?.addEventListener("pointerup", finishPortfolioPointer);
+portfolioMarquee?.addEventListener("pointercancel", finishPortfolioPointer);
+portfolioMarquee?.addEventListener("click", (event) => {
+  if (!suppressPortfolioClick) return;
+  event.preventDefault();
+  event.stopPropagation();
+  suppressPortfolioClick = false;
+}, true);
 
 // Creative image multi-format fallback
 // You can add files as creative-01.png, creative-01.jpg, creative-01.jpeg, or creative-01.webp.
 // The browser will try each format automatically until the image loads.
 (function () {
   const creativeFormats = ["png", "jpg", "jpeg", "webp"];
-  document.querySelectorAll("#social-media img[data-creative-base]").forEach((img) => {
-    img.addEventListener("error", () => {
+  const addPlaceholder = (img) => {
+    img.style.display = "none";
+    const media = img.closest(".creative-media");
+    if (media && !media.querySelector(".creative-placeholder-text")) {
+      const fallback = document.createElement("div");
+      fallback.className = "creative-placeholder-text";
+      fallback.innerHTML = "<span>Add image as PNG, JPG, JPEG or WEBP</span>";
+      media.appendChild(fallback);
+    }
+  };
+
+  const tryNextFormat = (img) => {
       const currentIndex = Number(img.dataset.formatIndex || "0");
       const nextIndex = currentIndex + 1;
 
       if (nextIndex >= creativeFormats.length) {
-        img.style.display = "none";
-        const media = img.closest(".creative-media");
-        if (media && !media.querySelector(".creative-placeholder-text")) {
-          const fallback = document.createElement("div");
-          fallback.className = "creative-placeholder-text";
-          const label = img.alt.replace(" social media creative", "");
-          fallback.innerHTML = `<strong>${label}</strong><span>Add image as PNG, JPG, JPEG or WEBP</span>`;
-          media.appendChild(fallback);
-        }
+        addPlaceholder(img);
         return;
       }
 
       img.dataset.formatIndex = String(nextIndex);
       img.src = `${img.dataset.creativeBase}.${creativeFormats[nextIndex]}`;
-    });
+  };
+
+  document.querySelectorAll("#social-media img[data-creative-base]").forEach((img) => {
+    img.addEventListener("error", () => tryNextFormat(img));
+    if (img.complete && img.naturalWidth === 0) {
+      tryNextFormat(img);
+    }
   });
 })();
 
-  </script>
+</script>
   <script src="global-navbar.js"></script>
-  <script src="lead-popup.js?v=2"></script>
-<script src="snow-effect.js"></script>
-<script src="assets/7art-chatbot-loader.js" defer></script>
-</body>
+  <script src="lead-popup.js?v=12"></script>
+  <script src="snow-effect.js"></script>
+  <script src="assets/7art-chatbot-loader.js" defer></script>
+  </body>
 </html>

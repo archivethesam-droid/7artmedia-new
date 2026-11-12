@@ -22,7 +22,7 @@
     .contact-float {
       position: fixed !important;
       right: 24px !important;
-      bottom: calc(24px + 64px + 12px) !important;
+      bottom: calc(36px + 56px + 12px) !important;
       gap: 12px !important;
       z-index: 2147482999 !important;
     }
@@ -37,8 +37,8 @@
       text-decoration: none !important;
     }
     .floating-contact .floating-btn svg {
-      width: 29px !important;
-      height: 29px !important;
+      width: 25px !important;
+      height: 25px !important;
       fill: #fff !important;
     }
     .floating-contact .floating-whatsapp {
@@ -49,28 +49,50 @@
     }
     .floating-contact .floating-btn,
     .contact-float .contact-float__button {
-      width: 64px !important;
-      height: 64px !important;
-      min-width: 64px !important;
-      border-radius: 20px !important;
+      width: 56px !important;
+      height: 56px !important;
+      min-width: 56px !important;
+      border-radius: 17px !important;
+    }
+    #sevenart-cat-root #sevenart-cat-launcher {
+      right: 24px !important;
+      bottom: 36px !important;
+      width: 56px !important;
+      height: 56px !important;
+      border-radius: 17px !important;
+    }
+    #sevenart-cat-root #sevenart-cat-launcher svg {
+      width: 36px !important;
+      height: 36px !important;
     }
     @media (max-width: 680px) {
       .floating-contact,
       .contact-float {
         right: 24px !important;
-        bottom: calc(24px + 56px + 10px) !important;
+        bottom: calc(30px + 50px + 10px) !important;
         gap: 10px !important;
       }
       .floating-contact .floating-btn,
       .contact-float .contact-float__button {
-        width: 56px !important;
-        height: 56px !important;
-        min-width: 56px !important;
-        border-radius: 18px !important;
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        border-radius: 15px !important;
       }
       .floating-contact .floating-btn svg {
-        width: 26px !important;
-        height: 26px !important;
+        width: 22px !important;
+        height: 22px !important;
+      }
+      #sevenart-cat-root #sevenart-cat-launcher {
+        right: 24px !important;
+        bottom: 30px !important;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 15px !important;
+      }
+      #sevenart-cat-root #sevenart-cat-launcher svg {
+        width: 32px !important;
+        height: 32px !important;
       }
     }
   `;
@@ -88,11 +110,11 @@
     catLogoUrl: assetUrl('cat-logo.jpg'),
     catLogoFit: 'cover',
     launcherRight: '24px',
-    launcherBottom: '24px',
+    launcherBottom: '36px',
     panelRight: '24px',
     panelBottom: '104px',
     mobileLauncherRight: hasFloatingContacts ? '24px' : '15px',
-    mobileLauncherBottom: '24px',
+    mobileLauncherBottom: '30px',
     mobilePanelRight: '8px',
     mobilePanelBottom: '82px',
     startOpen: false
