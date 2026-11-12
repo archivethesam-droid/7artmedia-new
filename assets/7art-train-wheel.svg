@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <radialGradient id="tire" cx="38%" cy="28%" r="75%">
+      <stop stop-color="#484a52"/>
+      <stop offset=".38" stop-color="#17181d"/>
+      <stop offset=".78" stop-color="#08090c"/>
+      <stop offset="1" stop-color="#34363d"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="20" y1="18" x2="105" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f4f4f5"/>
+      <stop offset=".18" stop-color="#777b83"/>
+      <stop offset=".42" stop-color="#272a30"/>
+      <stop offset=".7" stop-color="#aeb1b8"/>
+      <stop offset="1" stop-color="#363940"/>
+    </linearGradient>
+    <linearGradient id="spoke" x1="54" y1="14" x2="72" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dfe1e5"/>
+      <stop offset=".2" stop-color="#62656d"/>
+      <stop offset=".48" stop-color="#15171c"/>
+      <stop offset=".72" stop-color="#858991"/>
+      <stop offset="1" stop-color="#24262c"/>
+    </linearGradient>
+    <radialGradient id="hub" cx="32%" cy="25%" r="80%">
+      <stop stop-color="#777b84"/>
+      <stop offset=".38" stop-color="#292c33"/>
+      <stop offset=".72" stop-color="#08090c"/>
+      <stop offset="1" stop-color="#b5b8bf"/>
+    </radialGradient>
+  </defs>
+  <circle cx="64" cy="64" r="61" fill="url(#tire)" stroke="#090a0d" stroke-width="2"/>
+  <circle cx="64" cy="64" r="53.5" stroke="#777b83" stroke-width="2"/>
+  <circle cx="64" cy="64" r="49.5" fill="#121419" stroke="url(#rim)" stroke-width="3"/>
+  <circle cx="64" cy="64" r="42" stroke="#777b83" stroke-opacity=".5" stroke-width="1.5"/>
+  <g stroke="#08090c" stroke-width="13" stroke-linejoin="round">
+    <path id="spoke-shadow" d="M58 57 52 17Q51 11 64 10q13 1 12 7l-6 40-6 7z"/>
+  </g>
+  <g fill="url(#spoke)" stroke="#bfc2c8" stroke-opacity=".7" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M58 57 52 17Q51 11 64 10q13 1 12 7l-6 40-6 7z"/>
+    <path d="M58 57 52 17Q51 11 64 10q13 1 12 7l-6 40-6 7z" transform="rotate(72 64 64)"/>
+    <path d="M58 57 52 17Q51 11 64 10q13 1 12 7l-6 40-6 7z" transform="rotate(144 64 64)"/>
+    <path d="M58 57 52 17Q51 11 64 10q13 1 12 7l-6 40-6 7z" transform="rotate(216 64 64)"/>
+    <path d="M58 57 52 17Q51 11 64 10q13 1 12 7l-6 40-6 7z" transform="rotate(288 64 64)"/>
+  </g>
+  <circle cx="64" cy="64" r="20" fill="#090a0d" stroke="url(#rim)" stroke-width="3"/>
+  <circle cx="64" cy="64" r="13.5" fill="url(#hub)" stroke="#0b0c10" stroke-width="2"/>
+  <circle cx="64" cy="64" r="4" fill="#111318" stroke="#aeb1b8" stroke-width="1.5"/>
+</svg>

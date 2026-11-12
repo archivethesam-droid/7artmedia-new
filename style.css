@@ -242,6 +242,92 @@
       margin-top: 34px;
     }
 
+    .client-reviews {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .client-reviews__avatars {
+      display: flex;
+      align-items: center;
+      padding-left: 2px;
+      isolation: isolate;
+    }
+
+    .client-reviews__avatar {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 42px;
+      overflow: hidden;
+      margin-left: -16px;
+      border: 2px solid #100c19;
+      border-radius: 50%;
+      background: #fff;
+      cursor: default;
+      transform-origin: center;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .client-reviews__avatar:first-child {
+      margin-left: 0;
+    }
+
+    .client-reviews__avatar:hover,
+    .client-reviews__avatar:focus-visible {
+      z-index: 5;
+      transform: translateY(-4px) scale(1.65);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.48);
+      outline: none;
+    }
+
+    .client-reviews__avatar img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .client-reviews__avatar--krishna img {
+      transform: scale(1.25);
+    }
+
+    .client-reviews__avatar--bihart img {
+      transform: scale(1.35);
+    }
+
+    .client-reviews__avatar--juniper img {
+      transform: scale(1.4);
+    }
+
+    .client-reviews__copy {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.96rem;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+
+    .client-reviews__copy strong {
+      color: var(--orange);
+    }
+
+    .client-reviews__copy span {
+      margin-left: 4px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .client-reviews__avatar {
+        transition: none;
+      }
+    }
+
     .btn {
       position: relative;
       display: inline-flex;
@@ -1613,3 +1699,235 @@ pointer-events:none!important;
   left:40px!important;
   top:-20px!important;
 }
+
+  @media (min-width: 681px) {
+    .express-wrap {
+      width: 100vw;
+      max-width: none;
+      margin-inline: calc(50% - 50vw);
+      padding-inline: 0;
+    }
+
+    .express-loop {
+      will-change: transform;
+    }
+
+    .coach {
+      background: linear-gradient(145deg, rgba(42, 38, 58, .92), rgba(17, 17, 27, .98)) !important;
+      border-color: rgba(255, 255, 255, .16) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .12),
+        inset 0 -12px 24px rgba(0, 0, 0, .22),
+        0 18px 30px rgba(0, 0, 0, .28) !important;
+    }
+
+    .cw {
+      background: radial-gradient(circle at 35% 30%, #343443 0, #15151f 58%) !important;
+      border-color: rgba(210, 210, 230, .42) !important;
+      box-shadow:
+        inset 0 3px 6px rgba(255, 255, 255, .12),
+        0 8px 12px rgba(0, 0, 0, .42) !important;
+    }
+
+    .engine {
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .engine::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      right: 38px;
+      top: 42px;
+      width: 116px;
+      height: 142px;
+      border: 2px solid rgba(255, 255, 255, .36);
+      border-bottom: 0;
+      border-radius: 24px 24px 8px 8px;
+      background:
+        linear-gradient(90deg, transparent 47%, rgba(255,255,255,.16) 49%, transparent 52%),
+        linear-gradient(180deg, #8b5cf6 0%, #492a78 12%, #21182f 58%, #13131b 100%);
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,.32),
+        inset 8px 0 14px rgba(255,255,255,.07),
+        0 14px 26px rgba(0,0,0,.42);
+      clip-path: polygon(0 10%, 12% 0, 88% 0, 100% 10%, 100% 100%, 0 100%);
+    }
+
+    .engine::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      left: 26px;
+      bottom: 28px;
+      width: 346px;
+      height: 18px;
+      border: 1px solid rgba(255,255,255,.48);
+      border-radius: 5px 12px 8px 5px;
+      background: linear-gradient(180deg, #f3c96c 0%, #8d5c20 25%, #29232b 62%, #101116 100%);
+      box-shadow: 0 7px 12px rgba(0,0,0,.48);
+      clip-path: polygon(0 0, 100% 0, 94% 100%, 8% 100%);
+    }
+
+    .engine-body {
+      z-index: 2;
+      left: 28px !important;
+      top: 112px !important;
+      bottom: auto !important;
+      width: 300px !important;
+      height: 112px !important;
+      overflow: visible;
+      border: 2px solid rgba(255,255,255,.42);
+      border-radius: 60px 20px 20px 44px !important;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.32) 0%, transparent 10%),
+        linear-gradient(180deg, #9e6add 0%, #5b3488 17%, #30213e 58%, #17151d 100%) !important;
+      box-shadow:
+        inset 0 9px 13px rgba(255,255,255,.13),
+        inset 0 -12px 18px rgba(0,0,0,.5),
+        0 15px 22px rgba(0,0,0,.4);
+    }
+
+    .engine-body::before {
+      content: "";
+      position: absolute;
+      left: 34px;
+      top: -55px;
+      width: 40px;
+      height: 60px;
+      border: 2px solid rgba(255,255,255,.42);
+      border-radius: 9px 9px 5px 5px;
+      background: linear-gradient(90deg, #17151d, #716276 35%, #28232e 72%, #100f14);
+      box-shadow: inset 0 4px 5px rgba(255,255,255,.2), 0 4px 8px rgba(0,0,0,.35);
+    }
+
+    .engine-body::after {
+      content: "";
+      position: absolute;
+      left: 92px;
+      right: 24px;
+      top: 18px;
+      height: 3px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+      box-shadow: 0 5px 12px rgba(255,255,255,.18);
+    }
+
+    .headlight {
+      z-index: 4;
+      left: 20px !important;
+      top: 157px !important;
+      right: auto !important;
+      width: 25px !important;
+      height: 25px !important;
+      border: 3px solid #fff0b0;
+      background: radial-gradient(circle, #fff8cc 0 18%, #ffc94a 38%, #e18726 72%) !important;
+      box-shadow: 0 0 8px #ffd86b, 0 0 22px rgba(255,216,107,.9), 0 0 38px rgba(255,171,55,.6) !important;
+    }
+
+    .light {
+      z-index: 0;
+      left: -238px !important;
+      right: auto !important;
+      top: 148px !important;
+      width: 260px !important;
+      height: 90px !important;
+      opacity: .8;
+      clip-path: polygon(100% 40%, 0 0, 0 100%, 100% 60%) !important;
+      background: linear-gradient(90deg, transparent, rgba(255,220,120,.2), rgba(255,220,120,.6)) !important;
+      filter: blur(13px) !important;
+    }
+
+    .engine-copy {
+      z-index: 4;
+      left: 90px !important;
+      right: 98px !important;
+      bottom: 92px !important;
+      text-align: center !important;
+      pointer-events: none;
+    }
+
+    .engine-copy h3 {
+      margin: 0;
+      color: #fff;
+      font-size: 24px !important;
+      letter-spacing: .03em;
+      text-shadow: 0 2px 10px rgba(0,0,0,.55);
+    }
+
+    .wheel,
+    .cw {
+      z-index: 4;
+      border: 0 !important;
+      background: #111 !important;
+      background-image: url("assets/7art-train-wheel.svg") !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-size: contain !important;
+      filter: drop-shadow(0 7px 5px rgba(0,0,0,.52));
+    }
+
+    .wheel {
+      width: 72px !important;
+      height: 72px !important;
+      bottom: -36px !important;
+    }
+
+    .cw {
+      width: 72px !important;
+      height: 72px !important;
+      bottom: -36px !important;
+    }
+  }
+
+  .express-wrap {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .smoke {
+    top: 0 !important;
+    animation: trainSmoke 3.8s ease-out infinite !important;
+  }
+
+  .s2 {
+    animation-delay: 1.25s !important;
+  }
+
+  .s3 {
+    animation-delay: 2.5s !important;
+  }
+
+  .wheel,
+  .cw {
+    animation: wheelSpin 1.8s linear infinite !important;
+  }
+
+  @keyframes trainSmoke {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0) scale(.5);
+    }
+    18% {
+      opacity: .46;
+    }
+    72% {
+      opacity: .3;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-48px, -72px) scale(1.7);
+    }
+  }
+
+  @keyframes wheelSpin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }

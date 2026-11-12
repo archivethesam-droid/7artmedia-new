@@ -94,20 +94,19 @@
   border-radius: 999px;
   color: #fff;
   background: linear-gradient(135deg, var(--global-nav-purple), var(--global-nav-orange));
-  box-shadow: 0 12px 32px rgba(139, 92, 246, 0.32);
   text-decoration: none;
   white-space: nowrap;
   font-size: 14px;
   font-weight: 800;
   line-height: 1;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: none;
 }
 
 .global-nav__cta:hover,
 .global-nav__cta:focus-visible {
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 17px 42px rgba(255, 122, 24, 0.26);
+  transform: none;
+  box-shadow: none;
 }
 
 .global-nav__toggle {
@@ -199,4 +198,5 @@
   .global-nav__cta {
     transition: none;
   }
+
 }

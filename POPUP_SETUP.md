@@ -1,6 +1,6 @@
 # 7Art Session Lead Popup
 
-The website includes a reusable lead form popup matching the dark purple-orange 7Art visual system.
+The website includes a reusable offer-style lead form popup using the dark purple-orange 7Art visual system. It has a promotional panel, service selector, and contact form on desktop, with a stacked layout on smaller screens.
 
 ## Behaviour
 
@@ -11,6 +11,7 @@ The website includes a reusable lead form popup matching the dark purple-orange 
 - It works on localhost and also has a sessionStorage fallback for direct file testing.
 - It is intentionally disabled on `thank-you.html` and the CMS admin.
 - Submissions use the same Web3Forms access key as the existing contact form.
+- The popup advertises an offer of up to 30% off selected services and displays a recurring 24-hour refresh countdown. The countdown refreshes on its stored cycle; it is not an offer-expiration deadline.
 
 ## Testing
 
