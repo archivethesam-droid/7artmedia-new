@@ -29,7 +29,7 @@ const mimeTypes = {
 
 function run(command, args, options = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32', ...options });
+    const child = spawn(command, args, { cwd: ROOT, stdio: 'inherit', shell: false, ...options });
     child.on('error', reject);
     child.on('exit', (code) => code === 0 ? resolve() : reject(new Error(`${command} exited with code ${code}`)));
   });

@@ -211,9 +211,9 @@ function renderBlogIndex(posts) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/global-navbar.css?v=3">
+  <link rel="stylesheet" href="/global-navbar.css?v=6">
   <link rel="stylesheet" href="/blog-shared.css?v=4">
-  <link rel="stylesheet" href="/lead-popup.css?v=2">
+  <link rel="stylesheet" href="/lead-popup.css?v=12">
   <script type="application/ld+json">${safeJson(itemList)}</script>
 </head>
 <body class="blog-index-page">
@@ -255,7 +255,7 @@ function renderBlogIndex(posts) {
   ${footer('/')}
   <script src="/global-navbar.js"></script>
   <script src="/blog.js"></script>
-  <script src="/lead-popup.js?v=2"></script>
+  <script src="/lead-popup.js?v=12"></script>
   <script src="assets/7art-chatbot-loader.js" defer></script>
 </body>
 </html>`;
@@ -318,9 +318,9 @@ function renderArticle(post, posts) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/global-navbar.css?v=3">
+  <link rel="stylesheet" href="/global-navbar.css?v=6">
   <link rel="stylesheet" href="/blog-shared.css?v=4">
-  <link rel="stylesheet" href="/lead-popup.css?v=2">
+  <link rel="stylesheet" href="/lead-popup.css?v=12">
   <script type="application/ld+json">${safeJson(schema)}</script>
 </head>
 <body class="article-page">
@@ -344,7 +344,7 @@ function renderArticle(post, posts) {
   </main>
   ${footer('/')}
   <script src="/global-navbar.js"></script>
-  <script src="/lead-popup.js?v=2"></script>
+  <script src="/lead-popup.js?v=12"></script>
   <script src="../../assets/7art-chatbot-loader.js" defer></script>
 </body>
 </html>`;
